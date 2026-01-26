@@ -50,7 +50,8 @@ main {
     max-width: 1200px;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 0 12px;
+    gap: 24px;
 }
 
 .ingress {
@@ -65,7 +66,6 @@ header {
     max-width: 1200px;
     width: 100%;
     padding: 12px 0;
-    border-bottom: 2px solid var(--main-text);
 }
 
 .header__menu {
@@ -85,4 +85,9 @@ header {
 
 .header__menu-item:has(a:hover) {
     box-shadow: inset 0 -3px 0 0 var(--main-text);
+}
+
+.hero__image img {
+    max-width: 100%;
+    border-radius: 40px;
 }
