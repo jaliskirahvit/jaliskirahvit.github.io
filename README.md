@@ -15,4 +15,6 @@
 `git branch -d branch-name`
 
 ## TODO
-- widgetit
+- seuraava peli,
+- edelliset pelit
+- sarjataulukko
