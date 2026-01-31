@@ -2,32 +2,52 @@ import os
 import requests
 import json
 
-def fetch_and_save():
+API_BASE_URL = "https://spl.torneopal.net/taso/rest"
+
+def fetch_and_save(task):
+    endpoint = task["endpoint"]
+    filename = task["filename"]
+    extra_params = task.get("params", {})
+
     api_key = os.getenv("API_KEY_SECRET")
+    query_params = {"api_key": api_key}
 
-    # Joukkueet (placeholder)
-    url = f"https://spl.torneopal.net/taso/rest/getCategory?api_key={api_key}&competition_id=etejp26&category_id=M6&exclude_fields=player_statistics"
+    query_params.update(extra_params)
 
-    # Ottelut
-    # url = f"https://spl.torneopal.net/taso/rest/getMatches?api_key={api_key}&competition_id=etejp26&category_id=M6" #TODO: lisää group id ja team id kun julkaistaan otteluohjelma
-
-    # Sarjataulukko
-    # TODO
+    url = f"{API_BASE_URL}/{endpoint}"
 
     try:
-        response = requests.get(url)
+        response = requests.get(url, params=query_params)
         response.raise_for_status()
         data = response.json()
 
         os.makedirs('assets', exist_ok=True)
-        with open("assets/data.json", "w") as f:
+        with open(f"assets/{filename}", "w") as f:
             json.dump(data, f, indent=4)
-
-        print("Data saved to assets/data.json")
+        print(f"Saved {filename} from {endpoint}")
 
     except Exception as e:
-        print(f"Error fetching data: {e}")
-        exit(1)
+        print(f"Error fetching {endpoint}: {e}")
 
 if __name__ == "__main__":
-    fetch_and_save()
+    tasks = [
+        {
+            "endpoint": "getMatches",
+            "filename": "matches.json",
+            "params": {
+                "team_id": "60731" # TODO: Korvaa 35213369 kun otteluohjelma julkaistu
+            }
+        },
+        {
+            "endpoint": "getGroup",
+            "filename": "group.json",
+            "params": {
+                "competition_id": "spljp26", # TODO: Korvaa etejp26 kun otteluohjelma julkaistu
+                "category_id": "VL", # TODO: Korvaa M6 kun otteluohjelma julkaistu
+                "group_id": "1", # TODO: Vaihda oikea ID kun lohkot julkaistu
+            }
+        }
+    ]
+
+    for task in tasks:
+        fetch_and_save(task)

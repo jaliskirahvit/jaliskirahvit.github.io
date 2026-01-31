@@ -186,12 +186,44 @@ section {
         flex-direction: column;
         gap: 12px;
     }
-    .matches h2 {
+    .matches h2, .table h2 {
         font-size: 40px;
     }
 }
 @media screen and (max-width: 430px) {
-    .matches h2 {
+    .matches h2, .table h2 {
         font-size: 30px;
     }
+}
+
+.matches h2 {
+    padding: 12px 0;
+}
+
+.table__container, .table h2, .table p {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.table__container {
+    max-height: 500px;
+    max-width: 600px;
+    margin-bottom: 60px;
+    border: 1px solid var(--secondary-bg);
+    border-radius: 8px;
+    overflow-y: scroll;
+}
+
+.table__team {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    padding: 4px;
+}
+
+.table__team:nth-child(even) {
+    background: var(--main-bg);
+    border-radius: 4px;
 }
