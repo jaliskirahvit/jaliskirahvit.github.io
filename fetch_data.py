@@ -3,7 +3,7 @@ import requests
 import json
 
 def fetch_and_save():
-    api_key = os.getenv("TASO_API_KEY")
+    api_key = os.getenv("API_KEY_SECRET")
 
     # Joukkueet (placeholder)
     url = f"https://spl.torneopal.net/taso/rest/getCategory?api_key={api_key}&competition_id=etejp26&category_id=M6&exclude_fields=player_statistics"
