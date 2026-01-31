@@ -102,6 +102,7 @@ section {
     justify-content: center;
     position: relative;
     padding-top: 80px;
+    overflow-x: hidden;
 }
 
 .hero:after {
@@ -137,12 +138,39 @@ section {
     animation: giraffeEnter 1s cubic-bezier(.65,.2,.61,1.53) forwards;
 }
 
+.hero__image {
+    position: relative;
+}
+
+.hero__image:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../assets/jabulani.png") 10% 40% / 86px no-repeat;
+    z-index: 1;
+    animation: ballLeave 0.4s linear 0.7s forwards;
+}
+
+@media screen and (max-width: 520px) {
+    .hero__image:after {
+        background-size: 60px;
+    }
+}
+
 @keyframes giraffeEnter {
     from {
         transform: translateX(100%);
     }
     to {
         transform: translateX(0);
+    }
+}
+@keyframes ballLeave {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
     }
 }
 
