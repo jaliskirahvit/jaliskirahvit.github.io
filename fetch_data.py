@@ -35,16 +35,16 @@ if __name__ == "__main__":
             "endpoint": "getMatches",
             "filename": "matches.json",
             "params": {
-                "team_id": "60731" # TODO: Korvaa 35213369 kun otteluohjelma julkaistu
+                "team_id": "35213369",
             }
         },
         {
             "endpoint": "getGroup",
             "filename": "group.json",
             "params": {
-                "competition_id": "spljp26", # TODO: Korvaa etejp26 kun otteluohjelma julkaistu
-                "category_id": "VL", # TODO: Korvaa M6 kun otteluohjelma julkaistu
-                "group_id": "1", # TODO: Vaihda oikea ID kun lohkot julkaistu
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "1",
             }
         }
     ]

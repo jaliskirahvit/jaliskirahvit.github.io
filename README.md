@@ -18,3 +18,4 @@
 - API kutsut (korvataan oikeat ID:t kun otteluohjelma julkaistu)
 - footer
 - joukkue sivu
+- kirahvit lihavoituna edellisten ottelujen listassa
