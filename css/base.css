@@ -12,6 +12,8 @@ h1, h2, h3, h4, h5, h6, p, a, span {
     font-weight: 400;
     font-style: normal;
     color: var(--main-text);
+    padding: 0;
+    margin: 0;
 }
 
 * {
@@ -34,6 +36,7 @@ body {
     align-items: center;
     position: relative;
     margin: 0;
+    overflow-x: hidden;
 }
 body::before {
     content: "";
@@ -48,14 +51,11 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 0 12px;
+    padding: 0;
     gap: 24px;
-}
-
-.ingress {
-    font-size: 24px;
 }
 
 header {
@@ -65,13 +65,21 @@ header {
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    padding: 12px 0;
+}
+
+section {
+    width: 100%;
 }
 
 .header__menu {
     display: flex;
     justify-content: space-between;
     gap: 12px;
+    padding: 8px;
+}
+
+.header__logo-container {
+    padding: 8px;
 }
 
 .header__menu-item {
@@ -87,7 +95,75 @@ header {
     box-shadow: inset 0 -3px 0 0 var(--main-text);
 }
 
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../assets/hero-bg.svg") bottom / contain no-repeat;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 88px;
+    position: absolute;
+    top: 0;
+}
+
+@media screen and (max-width: 620px) {
+    .hero h1 {
+        font-size: 60px;
+        top: 20px;
+    }
+}
+@media screen and (max-width: 430px) {
+    .hero h1 {
+        font-size: 40px;
+        top: 40px;
+    }
+}
+
 .hero__image img {
     max-width: 100%;
     border-radius: 40px;
+    animation: giraffeEnter 1s cubic-bezier(.65,.2,.61,1.53) forwards;
+}
+
+@keyframes giraffeEnter {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.matches__container {
+    display: grid;
+    grid-template-columns: 6.5fr 3.5fr;
+    padding: 0 12px;
+}
+
+@media screen and (max-width: 960px) {
+    .matches__container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .matches h2 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 430px) {
+    .matches h2 {
+        font-size: 30px;
+    }
 }
