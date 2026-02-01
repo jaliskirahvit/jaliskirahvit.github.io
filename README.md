@@ -18,4 +18,3 @@
 - API kutsut (yml tiedostoon cron jobi kun aikataulu tullut)
 - joukkue sivu
 - kirahvit lihavoituna edellisten ottelujen listassa
-- seuraava ottelu nosto tyylit desktop + mobiili

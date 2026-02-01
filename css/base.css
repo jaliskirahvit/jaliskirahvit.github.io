@@ -179,6 +179,7 @@ section {
     display: grid;
     grid-template-columns: 6fr 4fr;
     padding: 0 12px;
+    gap: 12px;
 }
 
 @media screen and (max-width: 960px) {
@@ -280,6 +281,9 @@ section {
     gap: 12px;
     align-items: center;
     margin-top: 40px;
+    padding: 12px 16px;
+    box-shadow: 0 0 6px 0 var(--main-text);
+    border-radius: 8px;
 }
 
 .match-card--next .match-card__date, .match-card--next .match-card__venue {
