@@ -111,6 +111,7 @@ section {
     inset: 0;
     background: url("../assets/hero-bg.svg") bottom / contain no-repeat;
     z-index: -1;
+    border-radius: 60px;
 }
 
 .hero h1 {
@@ -362,4 +363,47 @@ section {
 
 .matches-table tr:last-child td {
     border-bottom: none;
+}
+
+footer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 260px;
+    background: var(--secondary-bg);
+    border-radius: 60px 60px 0 0;
+}
+
+.footer__content-main {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 44px 0px 44px;
+}
+
+.footer__content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer__content-bottom {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.footer__socials-instagram svg {
+    width: 30px;
+    transition: 0.1s linear;
+}
+
+.footer__socials-instagram svg path {
+    fill: var(--main-text);
+}
+
+.footer__socials-instagram a:hover svg {
+    transform: scale(1.05);
+    transition: 0.1s linear;
 }
