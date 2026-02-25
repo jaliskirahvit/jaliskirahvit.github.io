@@ -15,6 +15,5 @@
 `git branch -d branch-name`
 
 ## TODO
-- API kutsut (yml tiedostoon cron jobi kun aikataulu tullut)
 - joukkue sivu
 - kirahvit lihavoituna edellisten ottelujen listassa
