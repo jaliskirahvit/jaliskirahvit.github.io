@@ -44,7 +44,7 @@ if __name__ == "__main__":
             "params": {
                 "competition_id": "etejp26",
                 "category_id": "M6",
-                "group_id": "3",
+                "group_id": "14",
             }
         }
     ]
