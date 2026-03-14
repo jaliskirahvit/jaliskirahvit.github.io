@@ -83,9 +83,34 @@ async function loadData() {
 
         const matches = data.matches;
 
-        const sortedMatches = matches.sort((a, b) => new Date(a.date) - new Date(b.date));
+        const sortedMatches = matches.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
 
-        const nextMatch = sortedMatches.find(m => m.status === 'Planned');
+            const isADateInvalid = isNaN(dateA.getTime());
+            const isBDateInvalid = isNaN(dateB.getTime());
+
+            if (isADateInvalid && isBDateInvalid) {
+                return 0;
+            }
+
+            if (isADateInvalid) {
+                return 1;
+            }
+
+            if (isBDateInvalid) {
+                return -1;
+            }
+
+            return dateA.getTime() - dateB.getTime();
+        });
+
+        const now = new Date();
+
+        const nextMatch = sortedMatches.find(m => {
+            const matchDate = new Date(m.date);
+            return !isNaN(matchDate.getTime()) && matchDate.getTime() >= now.getTime();
+        });
 
         const previousMatches = sortedMatches
             .filter(m => m.status === 'Played')
