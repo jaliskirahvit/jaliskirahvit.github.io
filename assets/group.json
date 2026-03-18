@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-03-18T14:38:05+02:00",
+        "timestamp": "2026-03-18T16:12:20+02:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.379,
+        "result_time": 0.433,
         "apilevel": 1,
-        "time_stamp": 1773837485
+        "time_stamp": 1773843141
     },
     "group": {
         "competition_id": "etejp26",
@@ -83,6 +83,10 @@
         "teams": [
             {
                 "team_id": "35154994",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "9",
                 "team_name": "FC Dons/Akatemia",
                 "team_description": "Lohkot 3-4/9",
                 "team_country_id": null,
@@ -138,6 +142,10 @@
             },
             {
                 "team_id": "157394",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "3",
                 "team_name": "FC FC",
                 "team_description": "Lohkot 3-4/3",
                 "team_country_id": null,
@@ -193,6 +201,10 @@
             },
             {
                 "team_id": "35213369",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "8",
                 "team_name": "FC Jaliskirahvit",
                 "team_description": "Lohkot 3-4/8",
                 "team_country_id": null,
@@ -248,6 +260,10 @@
             },
             {
                 "team_id": "35137553",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "2",
                 "team_name": "FC Juvantus",
                 "team_description": "Lohkot 3-4/2",
                 "team_country_id": null,
@@ -303,6 +319,10 @@
             },
             {
                 "team_id": "157118",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "4",
                 "team_name": "FC POHU/Futboleros",
                 "team_description": "Lohkot 3-4/4",
                 "team_country_id": null,
@@ -358,6 +378,10 @@
             },
             {
                 "team_id": "35185778",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "15",
                 "team_name": "FC POHU/Traktori",
                 "team_description": "Lohkot 3-4/15",
                 "team_country_id": null,
@@ -413,6 +437,10 @@
             },
             {
                 "team_id": "35206945",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "1",
                 "team_name": "Gilla FC/26",
                 "team_description": "Lohkot 3-4/1",
                 "team_country_id": null,
@@ -468,6 +496,10 @@
             },
             {
                 "team_id": "57225",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "6",
                 "team_name": "HDS/Express",
                 "team_description": "Lohkot 3-4/6",
                 "team_country_id": null,
@@ -523,6 +555,10 @@
             },
             {
                 "team_id": "35158365",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "10",
                 "team_name": "HH Palloveikot",
                 "team_description": "3-4/10",
                 "team_country_id": null,
@@ -578,6 +614,10 @@
             },
             {
                 "team_id": "35118591",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "13",
                 "team_name": "HJK/Sininen",
                 "team_description": "Lohkot 3-4/13",
                 "team_country_id": null,
@@ -633,6 +673,10 @@
             },
             {
                 "team_id": "133810",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "5",
                 "team_name": "HJK/T\u00f6\u00f6l\u00f6n Ihme",
                 "team_description": "Lohkot 3-4/5",
                 "team_country_id": null,
@@ -688,6 +732,10 @@
             },
             {
                 "team_id": "35212580",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "7",
                 "team_name": "HP-47 Helsinki",
                 "team_description": "Lohkot 3-4/7",
                 "team_country_id": null,
@@ -743,6 +791,10 @@
             },
             {
                 "team_id": "35208798",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "16",
                 "team_name": "Helsinki United",
                 "team_description": "Lohkot 3-4/16",
                 "team_country_id": null,
@@ -798,6 +850,10 @@
             },
             {
                 "team_id": "35212189",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "14",
                 "team_name": "NEXO",
                 "team_description": "Lohkot 3-4/14",
                 "team_country_id": null,
@@ -853,6 +909,10 @@
             },
             {
                 "team_id": "35158038",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "12",
                 "team_name": "T\u00f6Ta/FC Mauskis",
                 "team_description": "Lohkot 3-4/12",
                 "team_country_id": null,
@@ -908,6 +968,10 @@
             },
             {
                 "team_id": "35185281",
+                "competition_id": "etejp26",
+                "category_id": "M6",
+                "group_id": "14",
+                "group_team_id": "11",
                 "team_name": "T\u00f6\u00f6l\u00f6 Tigers",
                 "team_description": "Lohkot 3-4/11",
                 "team_country_id": null,
