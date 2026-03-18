@@ -10,9 +10,9 @@
         "page": 1,
         "total_result_count": 15,
         "result_count": 15,
-        "result_time": 0.233,
+        "result_time": 0.21,
         "apilevel": 1,
-        "time_stamp": 1773813293
+        "time_stamp": 1773816342
     },
     "matches": [
         {
@@ -326,7 +326,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "b7f71721c2a48e2416e911579a10088f",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157623",
@@ -639,7 +639,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "b1bab4d01b064cf81f486dc039e3a0bc",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157634",
@@ -952,7 +952,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "638a17c3ae104e00f5f6c097e8704aa5",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157639",
@@ -1265,7 +1265,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "cb957c376f30060a1a84a3f58aa048b5",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157644",
@@ -1578,7 +1578,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "d7bdc8c04af5ff7ed8653cfecd4d31e5",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157673",
@@ -1891,7 +1891,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "97c813a8dbe86fda4683d56ade870c6b",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157685",
@@ -2204,7 +2204,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "9dc9bec5bc124c6336902397c3cd09a2",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157579",
@@ -2517,7 +2517,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "ee5274da1f3e31861685c419070946cf",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157585",
@@ -2830,7 +2830,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "125320ecc0ebbdfec83461eeaa74a0fa",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157660",
@@ -3143,7 +3143,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "415962139f1f425c614f58156cc2af76",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157594",
@@ -3456,7 +3456,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "b1d561c79701ee6fce0a4e99c067c36a",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157602",
@@ -3769,7 +3769,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "23d1ff56c725bca5838c5a073e394ff9",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157598",
@@ -4082,7 +4082,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "95bd6515144db170e8bd4e4d1642f06c",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157669",
@@ -4395,11 +4395,11 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "495f7e538441ba5d8be2cca9e846cdfe",
-            "timestamp": "1773813293"
+            "timestamp": "1773816342"
         },
         {
             "match_id": "4157616",
-            "last_modified": "2026-03-13 10:58:14",
+            "last_modified": "2026-03-18 08:22:18",
             "match_number": "342195",
             "match_report": "",
             "match_external_id": "",
@@ -4409,7 +4409,7 @@
             "competition_name": "Etel\u00e4 Jalkapallo 2026",
             "competition_result_service_name": "",
             "competition_logo": "",
-            "competition_area_name": "",
+            "competition_area_name": "Etel\u00e4inen",
             "competition_status": "published",
             "competition_officiality": "official",
             "season_id": "2026",
@@ -4452,16 +4452,16 @@
             "stage_name": "",
             "standings_name": "",
             "date": "2026-08-05",
-            "time": "",
+            "time": "18:15:00",
             "week": "32",
             "dow": "4",
             "reschedule": "0",
-            "time_reservation_start": "",
-            "time_end": "",
+            "time_reservation_start": "18:15:00",
+            "time_end": "19:35:00",
             "time_reservation_end": "",
             "time_zone": "Europe/Helsinki",
             "time_zone_offset": "+0300",
-            "sunset": "19:34",
+            "sunset": "21:45",
             "club_A_id": "5591",
             "club_A_name": "Gilla FC",
             "club_A_abbrevation": "Gilla Sport",
@@ -4497,7 +4497,7 @@
             "statistics_level": "",
             "events_display": "",
             "shotmap": "",
-            "status": "Planned",
+            "status": "Fixture",
             "matchcard_status": "",
             "forfeit_A": "",
             "forfeit_B": "",
@@ -4610,23 +4610,23 @@
             "referee_team_id": "",
             "referee_team_name": "",
             "match_card_team_id": "35206945",
-            "venue_id": "",
-            "venue_name": "",
-            "venue_lat": "",
-            "venue_lon": "",
+            "venue_id": "328",
+            "venue_name": "T\u00f6\u00f6l\u00f6 PK 1 TN",
+            "venue_lat": "60.185854953551",
+            "venue_lon": "24.923453144872",
             "venue_country": "",
             "venue_time_zone": "",
             "venue_time_zone_offset": "+0300",
             "venue_name_competition": "",
-            "venue_city_name": "",
-            "venue_city_id": "",
-            "venue_area_id": "",
+            "venue_city_name": "Helsinki",
+            "venue_city_id": "91",
+            "venue_area_id": "116",
             "venue_size": "",
             "required_venue_size": "iso",
-            "venue_referee_club_id": "",
-            "venue_area_name": "",
-            "venue_location_id": "",
-            "venue_location_name": "",
+            "venue_referee_club_id": "ETE",
+            "venue_area_name": "P\u00e4\u00e4kaupunkiseutu",
+            "venue_location_id": "2497",
+            "venue_location_name": "T\u00f6\u00f6l\u00f6n pallokentt\u00e4",
             "venue_suburb_name": "",
             "attendance": "",
             "report_attendance": "",
@@ -4707,8 +4707,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "f2719f6b5ce2ef22e6f1e954c84e6711",
-            "timestamp": "1773813293"
+            "version_hash": "c8980092683168e373dfd4a188dd10d6",
+            "timestamp": "1773816342"
         }
     ]
 }
