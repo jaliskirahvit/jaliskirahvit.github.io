@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-03-25T08:46:03+02:00",
+        "timestamp": "2026-03-25T09:43:29+02:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.433,
+        "result_time": 0.412,
         "apilevel": 1,
-        "time_stamp": 1774421163
+        "time_stamp": 1774424609
     },
     "group": {
         "competition_id": "etejp26",
@@ -1637,7 +1637,7 @@
                 "round_name": "",
                 "round_start_date": "2026-06-08",
                 "round_end_date": "2026-06-12",
-                "round_scheduled_start_date": "2026-06-08",
+                "round_scheduled_start_date": "2026-04-29",
                 "round_scheduled_end_date": "2026-06-12",
                 "area_id": "0",
                 "invitation_id": "",
