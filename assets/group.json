@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-04-27T10:29:05+03:00",
+        "timestamp": "2026-04-27T13:01:31+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.265,
+        "result_time": 0.378,
         "apilevel": 1,
-        "time_stamp": 1777274945
+        "time_stamp": 1777284092
     },
     "group": {
         "competition_id": "etejp26",
@@ -30,7 +30,7 @@
         "category_logo_dark_bg": "",
         "calculate_points": "1",
         "group_type": "group_stage",
-        "group_first_standing": "0",
+        "final_position_first": "0",
         "import_match_competition_id": "",
         "import_match_category_id": "",
         "import_match_group_id": "0",
@@ -72,6 +72,7 @@
         "pool_ranking_letter": "",
         "group_host_team_id": 0,
         "current": "1",
+        "final_position_last": "0",
         "promotionbanlimit": "0,0,0,0,0,0",
         "sub_group": [],
         "show_points_per_match": 0,
