@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-05-05T07:49:39+03:00",
+        "timestamp": "2026-05-05T10:08:21+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.627,
+        "result_time": 0.453,
         "apilevel": 1,
-        "time_stamp": 1777956579
+        "time_stamp": 1777964902
     },
     "group": {
         "competition_id": "etejp26",
@@ -36,8 +36,8 @@
         "import_match_group_id": "0",
         "playing_method": "normal",
         "sport_id": "football",
-        "category_notice": "<p>Lohkovoittajat (10+2,12) ja kaksi (2) parasta lohkokakkosta nousevat Vitoseen. Loput lohkokakkoset (8) pelaavat karsinnat, joissa m&auml;&auml;ritell&auml;&auml;n t&auml;ydennysj&auml;rjestys Vitoseen. Lopullinen nousijoiden m&auml;&auml;r&auml; selvi&auml;&auml; vasta Kakkosen putoajien ja Kolmosen nousijoiden selvitty&auml;.&nbsp;</p>",
-        "category_notice_full": "<p>Lohkovoittajat (10+2,12) ja kaksi (2) parasta lohkokakkosta nousevat Vitoseen. Loput lohkokakkoset (8) pelaavat karsinnat, joissa m&auml;&auml;ritell&auml;&auml;n t&auml;ydennysj&auml;rjestys Vitoseen. Lopullinen nousijoiden m&auml;&auml;r&auml; selvi&auml;&auml; vasta Kakkosen putoajien ja Kolmosen nousijoiden selvitty&auml;.&nbsp;</p>",
+        "category_notice": "<p>Lohkovoittajat ja yhdistettyjen lohkojen lohkokakkoset (10+2=12) sek&auml; kaksi (2) parasta lohkokakkosta tai yhdistettyjen lohkojen lohkokolmosta nousevat Vitoseen. Loput lohkokakkoset/yhdistettyjen lohkojen lohkokolmoset (8) pelaavat karsinnat, joissa m&auml;&auml;ritell&auml;&auml;n t&auml;ydennysj&auml;rjestys Vitoseen. Lopullinen nousijoiden m&auml;&auml;r&auml; selvi&auml;&auml; vasta Kakkosen putoajien ja Kolmosen nousijoiden selvitty&auml;.&nbsp;</p>",
+        "category_notice_full": "<p>Lohkovoittajat ja yhdistettyjen lohkojen lohkokakkoset (10+2=12) sek&auml; kaksi (2) parasta lohkokakkosta tai yhdistettyjen lohkojen lohkokolmosta nousevat Vitoseen. Loput lohkokakkoset/yhdistettyjen lohkojen lohkokolmoset (8) pelaavat karsinnat, joissa m&auml;&auml;ritell&auml;&auml;n t&auml;ydennysj&auml;rjestys Vitoseen. Lopullinen nousijoiden m&auml;&auml;r&auml; selvi&auml;&auml; vasta Kakkosen putoajien ja Kolmosen nousijoiden selvitty&auml;.&nbsp;</p>",
         "group_id": "14",
         "group_name": "3-4",
         "cross_groups": "",
