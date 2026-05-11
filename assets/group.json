@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-05-11T08:45:17+03:00",
+        "timestamp": "2026-05-11T11:50:42+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.476,
+        "result_time": 0.334,
         "apilevel": 1,
-        "time_stamp": 1778478317
+        "time_stamp": 1778489442
     },
     "group": {
         "competition_id": "etejp26",
@@ -4093,14 +4093,14 @@
                 "other_teams": []
             },
             {
-                "player_id": "435421",
+                "player_id": "234068",
                 "player_name": "Fernandez Rey Alejandro",
                 "first_name": "Alejandro",
                 "last_name": "Fernandez Rey",
                 "team_id": "157118",
                 "team_name": "FC POHU/Futboleros",
-                "img_url": "https://cdn.torneopal.net/img/player/palloliitto/435421_157118_fc0fe55fd6aada9ea7ea380f80e75bbe.webp",
-                "img_tag": "<img src='https://cdn.torneopal.net/img/player/palloliitto/435421_157118_fc0fe55fd6aada9ea7ea380f80e75bbe.webp'>",
+                "img_url": "https://cdn.torneopal.net/img/player/palloliitto/234068_157118_f87783f9819f48b5ce6cad1677add3eb.webp",
+                "img_tag": "<img src='https://cdn.torneopal.net/img/player/palloliitto/234068_157118_f87783f9819f48b5ce6cad1677add3eb.webp'>",
                 "club_id": "2",
                 "standing": "40",
                 "matches": "1",
