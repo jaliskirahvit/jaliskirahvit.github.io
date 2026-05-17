@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-05-17T11:03:08+03:00",
+        "timestamp": "2026-05-17T13:14:24+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.511,
+        "result_time": 0.649,
         "apilevel": 1,
-        "time_stamp": 1779004988
+        "time_stamp": 1779012865
     },
     "group": {
         "competition_id": "etejp26",
@@ -8204,8 +8204,8 @@
             {
                 "player_id": "229668",
                 "player_name": "Virtanen Tommi",
-                "first_name": "TOMMI",
-                "last_name": "VIRTANEN",
+                "first_name": "Tommi",
+                "last_name": "Virtanen",
                 "team_id": "35212580",
                 "team_name": "HP-47 Helsinki",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/229668_35212580_b96c51e8d13086fbdd6919fe4326dd9b.webp",
