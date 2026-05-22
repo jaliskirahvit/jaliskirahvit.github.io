@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-05-22T08:53:58+03:00",
+        "timestamp": "2026-05-22T11:43:37+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.327,
+        "result_time": 0.522,
         "apilevel": 1,
-        "time_stamp": 1779429238
+        "time_stamp": 1779439418
     },
     "group": {
         "competition_id": "etejp26",
@@ -1708,14 +1708,14 @@
                 "other_teams": []
             },
             {
-                "player_id": "65731",
-                "player_name": "Jokinen Rene",
-                "first_name": "Rene",
+                "player_id": "392014",
+                "player_name": "Jokinen Paavo",
+                "first_name": "Paavo",
                 "last_name": "Jokinen",
                 "team_id": "35213369",
                 "team_name": "FC Jaliskirahvit",
-                "img_url": "https://cdn.torneopal.net/img/player/palloliitto/65731_35213369_dc466c91bd00921141ea09834f10a257.webp",
-                "img_tag": "<img src='https://cdn.torneopal.net/img/player/palloliitto/65731_35213369_dc466c91bd00921141ea09834f10a257.webp'>",
+                "img_url": "https://cdn.torneopal.net/img/player/palloliitto/392014_35213369_601f13bae8528f2521d089d6dd509593.webp",
+                "img_tag": "<img src='https://cdn.torneopal.net/img/player/palloliitto/392014_35213369_601f13bae8528f2521d089d6dd509593.webp'>",
                 "club_id": "6950",
                 "standing": "3",
                 "matches": "3",
@@ -2077,14 +2077,14 @@
                 "other_teams": []
             },
             {
-                "player_id": "392014",
-                "player_name": "Jokinen Paavo",
-                "first_name": "Paavo",
+                "player_id": "65731",
+                "player_name": "Jokinen Rene",
+                "first_name": "Rene",
                 "last_name": "Jokinen",
                 "team_id": "35213369",
                 "team_name": "FC Jaliskirahvit",
-                "img_url": "https://cdn.torneopal.net/img/player/palloliitto/392014_35213369_601f13bae8528f2521d089d6dd509593.webp",
-                "img_tag": "<img src='https://cdn.torneopal.net/img/player/palloliitto/392014_35213369_601f13bae8528f2521d089d6dd509593.webp'>",
+                "img_url": "https://cdn.torneopal.net/img/player/palloliitto/65731_35213369_dc466c91bd00921141ea09834f10a257.webp",
+                "img_tag": "<img src='https://cdn.torneopal.net/img/player/palloliitto/65731_35213369_dc466c91bd00921141ea09834f10a257.webp'>",
                 "club_id": "6950",
                 "standing": "8",
                 "matches": "3",
