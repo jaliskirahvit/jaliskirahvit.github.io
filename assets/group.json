@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-06-02T08:18:06+03:00",
+        "timestamp": "2026-06-02T12:54:27+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.612,
+        "result_time": 0.69,
         "apilevel": 1,
-        "time_stamp": 1780377487
+        "time_stamp": 1780394067
     },
     "group": {
         "competition_id": "etejp26",
@@ -8830,8 +8830,8 @@
             {
                 "player_id": "62853",
                 "player_name": "H\u00f6rkk\u00f6 Lassi",
-                "first_name": "LASSI",
-                "last_name": "H\u00d6RKK\u00d6",
+                "first_name": "Lassi",
+                "last_name": "H\u00f6rkk\u00f6",
                 "team_id": "35213369",
                 "team_name": "FC Jaliskirahvit",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/62853_35213369_6f19bc44233ced30c026af8514660d91.webp",
