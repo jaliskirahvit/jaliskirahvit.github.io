@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-06-13T03:09:31+03:00",
+        "timestamp": "2026-06-13T08:11:10+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.819,
+        "result_time": 0.803,
         "apilevel": 1,
-        "time_stamp": 1781309371
+        "time_stamp": 1781327471
     },
     "group": {
         "competition_id": "etejp26",
@@ -8857,9 +8857,9 @@
             },
             {
                 "player_id": "304237",
-                "player_name": "Ahmed Leith",
+                "player_name": "Al-Jurani Leith",
                 "first_name": "Leith",
-                "last_name": "Ahmed",
+                "last_name": "Al-Jurani",
                 "team_id": "35118591",
                 "team_name": "HJK/Sininen",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/304237_35118591_50e367baf2e7f54da76eff860821fc52.webp",
