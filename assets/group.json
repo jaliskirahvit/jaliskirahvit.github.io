@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-06-16T16:19:23+03:00",
+        "timestamp": "2026-06-16T21:22:54+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.554,
+        "result_time": 0.371,
         "apilevel": 1,
-        "time_stamp": 1781615963
+        "time_stamp": 1781634174
     },
     "group": {
         "competition_id": "etejp26",
@@ -2698,8 +2698,8 @@
             {
                 "player_id": "84403",
                 "player_name": "Nyman Henrik",
-                "first_name": "HENRIK",
-                "last_name": "NYMAN",
+                "first_name": "Henrik",
+                "last_name": "Nyman",
                 "team_id": "35154994",
                 "team_name": "FC Dons/Akatemia",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/84403_35154994_dc457c8b1982b6f3208b9b6e2bdbaaf9.webp",
@@ -17576,8 +17576,8 @@
             {
                 "player_id": "104257",
                 "player_name": "Wallgren Jonatan",
-                "first_name": "JONATAN",
-                "last_name": "WALLGREN",
+                "first_name": "Jonatan",
+                "last_name": "Wallgren",
                 "team_id": "35154994",
                 "team_name": "FC Dons/Akatemia",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/104257_35154994_0c0aed84ec499c7e1d1290d5c3ffacb0.webp",
