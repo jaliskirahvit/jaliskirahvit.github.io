@@ -24,32 +24,45 @@
     </header>
     <main>
         <section class="hero">
-            <h1>FC Jaliskirahvit</h1>
+            <div class="hero__intro">
+                <span class="hero__eyebrow">Jalkapalloseura &middot; Helsinki</span>
+                <h1>FC Jaliskirahvit</h1>
+                <p class="hero__lead">Helsinkil&auml;inen jalkapalloseura, joka pelaa pitk&auml;ll&auml; kaulalla ossikonit heiluen.</p>
+                <div class="hero__cta">
+                    <a href="#ottelut" class="btn btn--primary">Ottelut</a>
+                    <a href="#sarja" class="btn btn--outline">Sarjataulukko</a>
+                </div>
+            </div>
             <div class="hero__image">
-                <img src="assets/giraffe.png" width="600">
+                <div class="hero__image-inner">
+                    <img src="assets/giraffe.png" width="600">
+                </div>
             </div>
         </section>
-        <section class="matches">
+        <section class="matches" id="ottelut">
             <div class="matches__container">
                 <div class="matches__next-match">
-                    <h2>Seuraava ottelu</h2>
-                    <div class="matches__next-match-container">
-
+                    <div class="section-heading">
+                        <h2>Seuraava ottelu</h2>
+                        <span class="section-heading__rule"></span>
                     </div>
+                    <div class="matches__next-match-container"></div>
                 </div>
                 <div class="matches__previous-matches">
-                    <h2>Edelliset ottelut</h2>
-                    <div class="matches__previous-matches-container">
-                        
+                    <div class="section-heading">
+                        <h2>Edelliset ottelut</h2>
+                        <span class="section-heading__rule"></span>
                     </div>
+                    <div class="matches__previous-matches-container"></div>
                 </div>
             </div>
         </section>
-        <section class="table">
-            <h2>Sarjataulukko</h2>
-            <div class="table__container">
-
+        <section class="table" id="sarja">
+            <div class="section-heading">
+                <h2>Sarjataulukko</h2>
+                <span class="section-heading__rule"></span>
             </div>
+            <div class="table__container"></div>
         </section>
     </main>
     <footer>
