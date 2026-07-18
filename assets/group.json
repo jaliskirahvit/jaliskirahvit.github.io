@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-07-18T07:33:47+03:00",
+        "timestamp": "2026-07-18T09:50:06+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.529,
+        "result_time": 0.635,
         "apilevel": 1,
-        "time_stamp": 1784349227
+        "time_stamp": 1784357407
     },
     "group": {
         "competition_id": "etejp26",
@@ -40,6 +40,7 @@
         "category_notice_full": "<p>Lohkovoittajat ja yhdistettyjen lohkojen lohkokakkoset (10+2=12) sek&auml; kaksi (2) parasta lohkokakkosta tai yhdistettyjen lohkojen lohkokolmosta nousevat Vitoseen. Loput lohkokakkoset/yhdistettyjen lohkojen lohkokolmoset (8) pelaavat karsinnat, joissa m&auml;&auml;ritell&auml;&auml;n t&auml;ydennysj&auml;rjestys Vitoseen. Lopullinen nousijoiden m&auml;&auml;r&auml; selvi&auml;&auml; vasta Kakkosen putoajien ja Kolmosen nousijoiden selvitty&auml;.&nbsp;</p>",
         "group_id": "14",
         "group_name": "3-4",
+        "external_id": "",
         "cross_groups": "",
         "group_notice": "\n",
         "group_notice_full": "\n",
