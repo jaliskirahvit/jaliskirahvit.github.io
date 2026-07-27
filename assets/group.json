@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-07-27T15:21:03+03:00",
+        "timestamp": "2026-07-27T18:33:07+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.56,
+        "result_time": 0.639,
         "apilevel": 1,
-        "time_stamp": 1785154864
+        "time_stamp": 1785166388
     },
     "group": {
         "competition_id": "etejp26",
@@ -8860,8 +8860,8 @@
             {
                 "player_id": "219066",
                 "player_name": "S\u00e4\u00e4sk\u00f6 Taneli",
-                "first_name": "TANELI",
-                "last_name": "S\u00c4\u00c4SK\u00d6",
+                "first_name": "Taneli",
+                "last_name": "S\u00e4\u00e4sk\u00f6",
                 "team_id": "35208798",
                 "team_name": "Helsinki United",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/219066_35208798_0831f207fed2397a9b97180ca7e4f220.webp",
@@ -10876,8 +10876,8 @@
             {
                 "player_id": "104987",
                 "player_name": "Ylitalo Ville",
-                "first_name": "VILLE",
-                "last_name": "YLITALO",
+                "first_name": "Ville",
+                "last_name": "Ylitalo",
                 "team_id": "35208798",
                 "team_name": "Helsinki United",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/104987_35208798_6f20bfcbf8bdd8c8ea851cc34e7d77c7.webp",
