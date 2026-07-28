@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-07-28T13:16:27+03:00",
+        "timestamp": "2026-07-28T15:27:22+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.668,
+        "result_time": 0.654,
         "apilevel": 1,
-        "time_stamp": 1785233787
+        "time_stamp": 1785241642
     },
     "group": {
         "competition_id": "etejp26",
@@ -11251,8 +11251,8 @@
             {
                 "player_id": "788589",
                 "player_name": "Entola Atte",
-                "first_name": "ATTE",
-                "last_name": "ENTOLA",
+                "first_name": "Atte",
+                "last_name": "Entola",
                 "team_id": "35213369",
                 "team_name": "FC Jaliskirahvit",
                 "img_url": "https://cdn.torneopal.net/img/player/palloliitto/788589_35213369_bd595c5c0528779d28f7e9c1b4e638c6.webp",
