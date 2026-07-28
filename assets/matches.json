@@ -10,9 +10,9 @@
         "page": 1,
         "total_result_count": 15,
         "result_count": 15,
-        "result_time": 0.218,
+        "result_time": 0.232,
         "apilevel": 1,
-        "time_stamp": 1785269726
+        "time_stamp": 1785275531
     },
     "matches": [
         {
@@ -327,11 +327,11 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "5bc9842f0a7bc22c0d5cde232f735944",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157585",
-            "last_modified": "2026-05-12 00:51:45",
+            "last_modified": "2026-05-12 03:51:45",
             "match_number": "342164",
             "match_report": "",
             "match_external_id": "",
@@ -640,8 +640,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "cad39ff5eaec9fd4de29b0b4a65f3fd2",
-            "timestamp": "1785269725"
+            "version_hash": "a829afc117a17a2d4f583128bc935a69",
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157660",
@@ -955,7 +955,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "0424479042528c007beb838c07dcccfd",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157594",
@@ -1269,7 +1269,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "ea79665df18d12b8a7f991159806181b",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157669",
@@ -1583,7 +1583,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "72818dd28c5527817c5d697e1981e78b",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157602",
@@ -1897,7 +1897,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "d55f67b30bb59b06a14056ee2d8158cc",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157598",
@@ -2211,11 +2211,11 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "38e4790f314edc47a779f0690e11f193",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157612",
-            "last_modified": "2026-07-28 20:00:10",
+            "last_modified": "2026-07-28 23:34:44",
             "match_number": "342191",
             "match_report": "",
             "match_external_id": "",
@@ -2314,23 +2314,23 @@
             "statistics_level": "",
             "events_display": "",
             "shotmap": "",
-            "status": "Fixture",
-            "matchcard_status": "",
+            "status": "Played",
+            "matchcard_status": "Played",
             "forfeit_A": "",
             "forfeit_B": "",
             "disqualify_A": "",
             "disqualify_B": "",
-            "winner": "",
-            "winner_id": 0,
-            "points_A": -1,
-            "points_B": -1,
+            "winner": "Away",
+            "winner_id": "35137553",
+            "points_A": 0,
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
-            "fs_A": "",
-            "fs_B": "",
-            "hts_A": "",
-            "hts_B": "",
+            "fs_A": "1",
+            "fs_B": "2",
+            "hts_A": "0",
+            "hts_B": "1",
             "ns_A": "",
             "ns_B": "",
             "es_A": "",
@@ -2408,8 +2408,8 @@
             "secretary_name": "",
             "timer_id": "0",
             "timer_name": "",
-            "referee_1_id": "",
-            "referee_1_name": "",
+            "referee_1_id": "28208",
+            "referee_1_name": "HEIKKI AALTO",
             "referee_1_player_id": "",
             "referee_2_id": "",
             "referee_2_name": "",
@@ -2445,7 +2445,7 @@
             "venue_location_id": "315",
             "venue_location_name": "Lauttasaari",
             "venue_suburb_name": "",
-            "attendance": "",
+            "attendance": "0",
             "report_attendance": "",
             "referee_classification": "M6",
             "assistant_referee_classification": "M6",
@@ -2488,7 +2488,7 @@
             "live_fouls_B": 0,
             "live_timer_start": "0000-00-00 00:00:00",
             "live_timer_start_time": "00:00:00",
-            "live_timer_on": "0",
+            "live_timer_on": 0,
             "temperature": "",
             "weather": "",
             "stream_url": "",
@@ -2524,8 +2524,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "ac7ad02ae6ff1526345d0760e84b048e",
-            "timestamp": "1785269725"
+            "version_hash": "b224107666184e4449a8f6f792b9b397",
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157616",
@@ -2839,7 +2839,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "79440e9bd5d31f25e7616e044d77c6dc",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157623",
@@ -3153,7 +3153,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "724025a6b451ef601d18a1dcb108889d",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157685",
@@ -3467,7 +3467,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "13e23bbcce2c1f4720cc40578a01fb93",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157634",
@@ -3781,7 +3781,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "5b0816554097106f2d5f26de5593b61c",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157639",
@@ -4095,7 +4095,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "3dffb5624817b0f1dd2aa7b1bd808b70",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157644",
@@ -4409,7 +4409,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "6d9bb7628bb333289f63946b4b4fd7dc",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         },
         {
             "match_id": "4157673",
@@ -4723,7 +4723,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "ac6b289604e6179267b014f2efdb571d",
-            "timestamp": "1785269725"
+            "timestamp": "1785275531"
         }
     ]
 }
