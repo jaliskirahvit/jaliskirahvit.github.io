@@ -2,8 +2,8 @@
     "call": {
         "status": "error",
         "error": "Invalid competition_id / palloliitto",
-        "result_time": 0.299,
-        "time_stamp": 1785877086,
+        "result_time": 0.277,
+        "time_stamp": 1785881181,
         "xip": "127.0.1.1",
         "apilevel": 1
     }
