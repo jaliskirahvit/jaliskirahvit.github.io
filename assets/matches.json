@@ -10,9 +10,9 @@
         "page": 1,
         "total_result_count": 15,
         "result_count": 15,
-        "result_time": 0.255,
+        "result_time": 0.132,
         "apilevel": 1,
-        "time_stamp": 1786157165
+        "time_stamp": 1786161594
     },
     "matches": [
         {
@@ -124,7 +124,7 @@
             "disqualify_B": "",
             "winner": "Home",
             "winner_id": "35213369",
-            "points_A": "3",
+            "points_A": 3,
             "points_B": 0,
             "final_position_win": "",
             "final_position_lost": "",
@@ -326,8 +326,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "16aec7dc44618e385bad0a65f57b7379",
-            "timestamp": "1786157165"
+            "version_hash": "5bc9842f0a7bc22c0d5cde232f735944",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157585",
@@ -439,7 +439,7 @@
             "winner": "Away",
             "winner_id": "35213369",
             "points_A": 0,
-            "points_B": "3",
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
@@ -640,8 +640,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "f75f221ddef72d38bd612f231b67e027",
-            "timestamp": "1786157165"
+            "version_hash": "cad39ff5eaec9fd4de29b0b4a65f3fd2",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157660",
@@ -753,7 +753,7 @@
             "winner": "Away",
             "winner_id": "35213369",
             "points_A": 0,
-            "points_B": "3",
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
@@ -954,8 +954,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "648560883105b472372a43297805ed74",
-            "timestamp": "1786157165"
+            "version_hash": "0424479042528c007beb838c07dcccfd",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157594",
@@ -1066,7 +1066,7 @@
             "disqualify_B": "",
             "winner": "Home",
             "winner_id": "35213369",
-            "points_A": "3",
+            "points_A": 3,
             "points_B": 0,
             "final_position_win": "",
             "final_position_lost": "",
@@ -1268,8 +1268,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "5a8761e6b22c695f324af5073507bd8e",
-            "timestamp": "1786157165"
+            "version_hash": "ea79665df18d12b8a7f991159806181b",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157669",
@@ -1381,7 +1381,7 @@
             "winner": "Away",
             "winner_id": "35213369",
             "points_A": 0,
-            "points_B": "3",
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
@@ -1582,8 +1582,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "b7721cedc95f83176398d509c6b0ca57",
-            "timestamp": "1786157165"
+            "version_hash": "5f013606d01656b3b49e2369888fee5a",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157602",
@@ -1695,7 +1695,7 @@
             "winner": "Away",
             "winner_id": "157118",
             "points_A": 0,
-            "points_B": "3",
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
@@ -1896,8 +1896,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "13f0551acb0e30de437257859b97aa2a",
-            "timestamp": "1786157165"
+            "version_hash": "d55f67b30bb59b06a14056ee2d8158cc",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157598",
@@ -2009,7 +2009,7 @@
             "winner": "Away",
             "winner_id": "35213369",
             "points_A": 0,
-            "points_B": "3",
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
@@ -2210,8 +2210,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "c26280e33d3618ed25e081a164942f5b",
-            "timestamp": "1786157165"
+            "version_hash": "38e4790f314edc47a779f0690e11f193",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157612",
@@ -2323,7 +2323,7 @@
             "winner": "Away",
             "winner_id": "35137553",
             "points_A": 0,
-            "points_B": "3",
+            "points_B": 3,
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
@@ -2524,8 +2524,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "5ea9200ff95f80b69b028026b3c07da8",
-            "timestamp": "1786157165"
+            "version_hash": "46a7b3ea1b795414877f227f344dd2e7",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157616",
@@ -2636,7 +2636,7 @@
             "disqualify_B": "",
             "winner": "Home",
             "winner_id": "35206945",
-            "points_A": "3",
+            "points_A": 3,
             "points_B": 0,
             "final_position_win": "",
             "final_position_lost": "",
@@ -2838,8 +2838,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "99a6eee4da80a6ff7784f1c2ef8c6b66",
-            "timestamp": "1786157165"
+            "version_hash": "39867420aba1ff4211db62ec0d45a780",
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157623",
@@ -3153,7 +3153,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "724025a6b451ef601d18a1dcb108889d",
-            "timestamp": "1786157165"
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157685",
@@ -3467,7 +3467,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "13e23bbcce2c1f4720cc40578a01fb93",
-            "timestamp": "1786157165"
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157634",
@@ -3781,7 +3781,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "5b0816554097106f2d5f26de5593b61c",
-            "timestamp": "1786157165"
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157639",
@@ -4095,7 +4095,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "3dffb5624817b0f1dd2aa7b1bd808b70",
-            "timestamp": "1786157165"
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157644",
@@ -4409,7 +4409,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "6d9bb7628bb333289f63946b4b4fd7dc",
-            "timestamp": "1786157165"
+            "timestamp": "1786161594"
         },
         {
             "match_id": "4157673",
@@ -4723,7 +4723,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "ac6b289604e6179267b014f2efdb571d",
-            "timestamp": "1786157165"
+            "timestamp": "1786161594"
         }
     ]
 }
