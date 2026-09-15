@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-09-15T04:00:07+03:00",
+        "timestamp": "2026-09-15T08:52:28+03:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.836,
+        "result_time": 0.666,
         "apilevel": 1,
-        "time_stamp": 1789434008
+        "time_stamp": 1789451549
     },
     "group": {
         "competition_id": "etejp26",
@@ -8940,8 +8940,8 @@
             },
             {
                 "player_id": "1156313",
-                "player_name": "Iacob Sergiu Andrei",
-                "first_name": "Sergiu Andrei",
+                "player_name": "Iacob Sergiu-Andrei",
+                "first_name": "Sergiu-Andrei",
                 "last_name": "Iacob",
                 "team_id": "57225",
                 "team_name": "HDS/Express",
