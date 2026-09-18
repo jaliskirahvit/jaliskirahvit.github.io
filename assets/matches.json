@@ -10,9 +10,9 @@
         "page": 1,
         "total_result_count": 15,
         "result_count": 15,
-        "result_time": 0.189,
+        "result_time": 0.184,
         "apilevel": 1,
-        "time_stamp": 1789725939
+        "time_stamp": 1789742410
     },
     "matches": [
         {
@@ -48,6 +48,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -326,8 +327,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "16aec7dc44618e385bad0a65f57b7379",
-            "timestamp": "1789725939"
+            "version_hash": "a9d8cf36f6c8c943300aa230d4ebceb4",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157585",
@@ -362,6 +363,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -640,8 +642,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "f75f221ddef72d38bd612f231b67e027",
-            "timestamp": "1789725939"
+            "version_hash": "bec770233b8507536d6ce4742250c1ea",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157660",
@@ -676,6 +678,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -954,8 +957,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "648560883105b472372a43297805ed74",
-            "timestamp": "1789725939"
+            "version_hash": "23b3e67fb0da40713953432bf6adb902",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157594",
@@ -990,6 +993,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -1268,8 +1272,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "5a8761e6b22c695f324af5073507bd8e",
-            "timestamp": "1789725939"
+            "version_hash": "06d4160736730ea1b1ad0d085b73bd8a",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157669",
@@ -1304,6 +1308,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -1582,8 +1587,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "b7721cedc95f83176398d509c6b0ca57",
-            "timestamp": "1789725939"
+            "version_hash": "a5cb3a8f454e99ee3f02064e8b2d8393",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157602",
@@ -1618,6 +1623,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -1896,8 +1902,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "13f0551acb0e30de437257859b97aa2a",
-            "timestamp": "1789725939"
+            "version_hash": "7f432e0739ab408bc08da9785f47cce3",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157598",
@@ -1932,6 +1938,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -2210,8 +2217,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "c26280e33d3618ed25e081a164942f5b",
-            "timestamp": "1789725939"
+            "version_hash": "db9f42d91323fd9a58527e41cfa9f8e3",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157612",
@@ -2246,6 +2253,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -2524,8 +2532,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "5ea9200ff95f80b69b028026b3c07da8",
-            "timestamp": "1789725939"
+            "version_hash": "459383175dd4dff335659d2f2ee15ce2",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157616",
@@ -2560,6 +2568,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -2838,8 +2847,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "5588c8cf9fc1a10a327951c05b8ed154",
-            "timestamp": "1789725939"
+            "version_hash": "079c8b7425f61c183c7d90288e598ac0",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157623",
@@ -2874,6 +2883,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -3152,8 +3162,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "8701fda401893fe4aa6164275b4103f7",
-            "timestamp": "1789725939"
+            "version_hash": "868777404a6fb6a42beb8319f15a5e72",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157685",
@@ -3188,6 +3198,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -3466,8 +3477,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "b27c44ee7772dce37536985d5032b4e0",
-            "timestamp": "1789725939"
+            "version_hash": "785ad4ff72b9897269a50add2d452717",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157634",
@@ -3502,6 +3513,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -3780,8 +3792,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "1a486102558a7c034287274ef412d34d",
-            "timestamp": "1789725939"
+            "version_hash": "0c1235f0ef0b84f8b59dc67cb442154e",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157639",
@@ -3816,6 +3828,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -4094,8 +4107,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "c2690d34390ab7600a86e987a8fec524",
-            "timestamp": "1789725939"
+            "version_hash": "53c83c0966912482d7e6227793271282",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157644",
@@ -4130,6 +4143,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -4408,12 +4422,12 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "0360864d57fa23d463694ef912357a84",
-            "timestamp": "1789725939"
+            "version_hash": "152b10010431bdc02d4cab95045cf000",
+            "timestamp": "1789742410"
         },
         {
             "match_id": "4157673",
-            "last_modified": "2026-09-08 17:34:56",
+            "last_modified": "2026-09-18 16:24:39",
             "match_number": "342252",
             "match_report": "",
             "match_external_id": "",
@@ -4444,6 +4458,7 @@
             "category_group_name_en": "",
             "category_live": "1",
             "calculate_points": "1",
+            "category_plusminus": "0",
             "season_order": "1010",
             "group_id": "14",
             "group_name": "3-4",
@@ -4722,8 +4737,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "b28319885f5f963b1eeed9f58d2e632b",
-            "timestamp": "1789725939"
+            "version_hash": "a596597b2c67608c34a982107b873c18",
+            "timestamp": "1789742410"
         }
     ]
 }
