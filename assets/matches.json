@@ -10,9 +10,9 @@
         "page": 1,
         "total_result_count": 17,
         "result_count": 17,
-        "result_time": 0.194,
+        "result_time": 0.13,
         "apilevel": 1,
-        "time_stamp": 1790841107
+        "time_stamp": 1790866232
     },
     "matches": [
         {
@@ -328,7 +328,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "754388f4110584d720c85fa7a34ef666",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157585",
@@ -643,7 +643,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "650037c13daf5d6f93f4e8d78e8e9964",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157660",
@@ -958,7 +958,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "ba3ecfb375be6bcafd67eab717864f86",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157594",
@@ -1273,7 +1273,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "54815a72f2486749df01144012889689",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157669",
@@ -1588,7 +1588,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "9cbeef8c74c143273d550261078d289a",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157602",
@@ -1903,7 +1903,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "decdade9e15443d18d3881305960cea6",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157598",
@@ -2218,7 +2218,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "102b428f7694259f7a2331e1a5d29ce9",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157612",
@@ -2533,7 +2533,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "cafb1fbd8f084c59da62496ccd636af7",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157616",
@@ -2848,7 +2848,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "0637276aa22f7a594bf29298cc0f36eb",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157623",
@@ -3163,7 +3163,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "df1040a9734a3fb5aa3ae05a9760b85a",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157685",
@@ -3478,7 +3478,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "65ba66e2163eeeef81280411a874d033",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157634",
@@ -3793,7 +3793,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "d1bec9beadd3e4e32b6f8402886b47b8",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157639",
@@ -4108,7 +4108,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "261c3f46b50b9def3eb96b2653d21ac1",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157644",
@@ -4423,7 +4423,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "e110f8dfd2127a3161d29d0c044b1fb7",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4157673",
@@ -4738,7 +4738,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "101365e5e840d2a7b6e11c1af6ce645a",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4120104",
@@ -5053,11 +5053,11 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "f34a76533f1168027f7646663763ef7e",
-            "timestamp": "1790841107"
+            "timestamp": "1790866232"
         },
         {
             "match_id": "4120107",
-            "last_modified": "2026-09-25 12:46:16",
+            "last_modified": "2026-10-01 14:54:33",
             "match_number": "313170",
             "match_report": "",
             "match_external_id": "313170",
@@ -5122,36 +5122,36 @@
             "time_zone": "Europe/Helsinki",
             "time_zone_offset": "+0300",
             "sunset": "18:41",
-            "club_A_id": "6950",
-            "club_A_name": "FC Jaliskirahvit",
-            "club_A_abbrevation": "FC Jaliskirahvit",
+            "club_A_id": "6076",
+            "club_A_name": "Helsingin Pallo-Veikot",
+            "club_A_abbrevation": "Helsingin Pallo-Veikot",
             "club_A_www": "",
-            "club_A_crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+            "club_A_crest": "https://cdn.torneopal.net/logo/palloliitto/6076x.png",
             "club_A_crest_dark_bg": "",
-            "team_A_id": "35213369",
-            "team_A_name": "FC Jaliskirahvit",
+            "team_A_id": "35209844",
+            "team_A_name": "Helsingin Pallo-Veikot",
             "team_A_abbrevation": "",
-            "team_A_description": "v313167",
-            "team_A_description_en": "FC Jaliskirahvit",
+            "team_A_description": "v313168",
+            "team_A_description_en": "Helsingin Pallo-Veikot",
             "team_A_www": "",
             "club_A_distance": "",
             "team_A_home_venue_id": "",
             "team_A_primary_category_id": "M6",
             "team_A_primary_category_abbrevation": "M6",
-            "club_B_id": "6076",
-            "club_B_name": "Helsingin Pallo-Veikot",
-            "club_B_abbrevation": "Helsingin Pallo-Veikot",
+            "club_B_id": "6950",
+            "club_B_name": "FC Jaliskirahvit",
+            "club_B_abbrevation": "FC Jaliskirahvit",
             "club_B_www": "",
             "club_B_distance": "",
-            "club_B_crest": "https://cdn.torneopal.net/logo/palloliitto/6076x.png",
+            "club_B_crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
             "club_B_crest_dark_bg": "",
-            "team_B_id": "35209844",
-            "team_B_name": "Helsingin Pallo-Veikot",
+            "team_B_id": "35213369",
+            "team_B_name": "FC Jaliskirahvit",
             "team_B_abbrevation": "",
-            "team_B_description": "v313168",
-            "team_B_description_en": "Helsingin Pallo-Veikot",
+            "team_B_description": "v313167",
+            "team_B_description_en": "FC Jaliskirahvit",
             "team_B_www": "",
-            "team_B_home_venue_id": "336",
+            "team_B_home_venue_id": "315",
             "team_B_primary_category_id": "M6",
             "team_B_primary_category_abbrevation": "M6",
             "statistics_level": "",
@@ -5269,7 +5269,7 @@
             "assistant_referee_2_join": "",
             "referee_team_id": "",
             "referee_team_name": "",
-            "match_card_team_id": "35213369",
+            "match_card_team_id": "35209844",
             "venue_id": "365",
             "venue_name": "Tali halli TN",
             "venue_lat": "60.215650390632",
@@ -5305,7 +5305,7 @@
                 2100,
                 2100
             ],
-            "win_period_count": "0",
+            "win_period_count": "2",
             "period_count_fixed": "0",
             "period_min": "35",
             "extra_period_count": "",
@@ -5329,8 +5329,8 @@
             "live_serve_team": "",
             "live_fouls_A": 0,
             "live_fouls_B": 0,
-            "live_timer_start": "",
-            "live_timer_start_time": "",
+            "live_timer_start": "0000-00-00 00:00:00",
+            "live_timer_start_time": "00:00:00",
             "live_timer_on": "0",
             "temperature": "",
             "weather": "",
@@ -5367,8 +5367,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "e577405e5ddacbf9b88a2692b6caec98",
-            "timestamp": "1790841107"
+            "version_hash": "efb35e31239242716880cf194675a7ad",
+            "timestamp": "1790866232"
         }
     ]
 }
