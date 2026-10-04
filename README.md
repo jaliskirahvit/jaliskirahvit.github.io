@@ -15,5 +15,4 @@
 `git branch -d branch-name`
 
 ## TODO
-- joukkue sivu
 - kirahvit lihavoituna edellisten ottelujen listassa
