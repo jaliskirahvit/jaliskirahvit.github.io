@@ -79,14 +79,24 @@ async function loadTeam() {
 
     function renderIntro() {
         const totalGoals = players.reduce((sum, p) => sum + p.goals, 0);
-        const topScorer = [...players].sort((a, b) => b.goals - a.goals || a.matches - b.matches)[0];
-        const ironman = [...players].sort((a, b) => b.matches - a.matches)[0];
+        // Everyone sharing the top value is listed; large ties collapse into a count
+        function leaderTile(key, title) {
+            const best = Math.max(0, ...players.map(p => p[key]));
+            if (best === 0) return null;
+
+            const leaders = players.filter(p => p[key] === best);
+            const names = leaders.length > 3
+                ? `${leaders.length} pelaajaa`
+                : leaders.map(p => esc(fullName(p))).join("<br>");
+
+            return { value: best, label: `${title}<br><strong>${names}</strong>` };
+        }
 
         const tiles = [
             { value: players.length, label: "Pelaajaa" },
             { value: totalGoals, label: "Maalia" },
-            topScorer && { value: topScorer.goals, label: `Maalikuningas<br><strong>${esc(fullName(topScorer))}</strong>` },
-            ironman && { value: ironman.matches, label: `Eniten otteluita<br><strong>${esc(fullName(ironman))}</strong>` },
+            leaderTile("goals", "Maalikuningas"),
+            leaderTile("matches", "Eniten otteluita"),
         ].filter(Boolean);
 
         introStats.innerHTML = tiles.map(t => `
