@@ -7,12 +7,12 @@
             "group_id": "14"
         },
         "status": "ok",
-        "timestamp": "2026-11-06T10:35:51+02:00",
+        "timestamp": "2026-11-06T18:20:34+02:00",
         "error": null,
         "error_message": null,
-        "result_time": 0.604,
+        "result_time": 0.741,
         "apilevel": 1,
-        "time_stamp": 1793954152
+        "time_stamp": 1793982034
     },
     "group": {
         "competition_id": "etejp26",
