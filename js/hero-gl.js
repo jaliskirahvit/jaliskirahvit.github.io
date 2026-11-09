@@ -79,7 +79,9 @@ void main() {
     gl_FragColor = vec4(col * a, a);
 }`;
 
-    const CELL = 170;                 // CSS px, the same in every section so the field matches
+    // CSS px, the same in every section so the field matches. Smaller on phones, where 170px
+    // cells would be only two across the screen.
+    const CELL = window.innerWidth < 640 ? 120 : 170;
     const OFFSET = Math.random() * 20; // starting phase of the animation, shared by all canvases
     const T0 = performance.now();
 
@@ -194,7 +196,9 @@ void main() {
             gl.uniform1f(U.uTime, reduced ? OFFSET : OFFSET + (now - T0) / 1000);
             gl.uniform2f(U.uMouse, shared.x, shared.y);
             gl.uniform1f(U.uActive, shared.active);
-            gl.uniform1f(U.uScroll, window.scrollY);
+            // No scroll parallax on touch: the pattern would lag the finger-driven scroll by a frame
+            // and shimmer. Touch screens also get a calmer 30 fps cap below.
+            gl.uniform1f(U.uScroll, env.finePointer ? window.scrollY : 0);
             gl.uniform1f(U.uCell, CELL);
             gl.drawArrays(gl.TRIANGLES, 0, 3);
             if (!shown) { // fade in once the first frame is on screen
@@ -203,9 +207,13 @@ void main() {
             }
         }
 
+        let lastDraw = 0;
         function loop(now) {
             if (!visible || document.hidden) { running = false; return; }
-            draw(now);
+            if (env.finePointer || now - lastDraw > 30) {
+                lastDraw = now;
+                draw(now);
+            }
             requestAnimationFrame(loop);
         }
         function start() {

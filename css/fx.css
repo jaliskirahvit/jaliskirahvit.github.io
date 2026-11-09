@@ -466,7 +466,7 @@ header {
 }
 @media screen and (max-width: 640px) {
     .neck {
-        right: 3px;
+        right: 7px;
         width: 9px;
     }
     .neck__body {
@@ -776,4 +776,9 @@ header {
     .pitch__info {
         min-height: 0;
     }
+}
+
+/* Nothing decorative may widen the page */
+html {
+    overflow-x: clip;
 }
