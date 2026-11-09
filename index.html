@@ -6,36 +6,44 @@
     <title>FC Jaliskirahvit</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/load_data.js" defer></script>
+    <script src="js/matches.js" defer></script>
+    <script src="js/home.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header__logo-container">
             <a href="index.html"><img src="assets/logo.png" width="120"></a>
         </div>
-        <div class="header__menu">
+        <nav class="header__menu">
             <div class="header__menu-item">
-                <a href="index.html">Etusivu</a>
+                <a href="index.html" aria-current="page">Etusivu</a>
+            </div>
+            <div class="header__menu-item">
+                <a href="futsal.html">Futsal</a>
+            </div>
+            <div class="header__menu-item">
+                <a href="jalkapallo.html">Jalkapallo</a>
             </div>
             <div class="header__menu-item">
                 <a href="joukkue.html">Joukkue</a>
             </div>
-        </div>
+        </nav>
     </header>
     <main>
         <section class="hero">
             <div class="hero__intro">
-                <span class="hero__eyebrow">Jalkapalloseura &middot; Helsinki</span>
+                <span class="hero__eyebrow">Jalkapallo &amp; futsal &middot; Helsinki</span>
                 <h1>FC Jaliskirahvit</h1>
-                <p class="hero__lead">Helsinkil&auml;inen jalkapalloseura, joka pelaa pitk&auml;ll&auml; kaulalla ossikonit heiluen.</p>
+                <p class="hero__lead">Helsinkil&auml;inen jalkapalloseura, joka pelaa pitk&auml;ll&auml; kaulalla ossikonit heiluen &ndash; kes&auml;ll&auml; nurmella, talvella futsal-kent&auml;ll&auml;.</p>
                 <div class="hero__cta">
                     <a href="#ottelut" class="btn btn--primary">Ottelut</a>
                     <a href="#sarja" class="btn btn--outline">Sarjataulukko</a>
                 </div>
+                <a class="hero__season" href="futsal.html" hidden></a>
             </div>
             <div class="hero__image">
                 <div class="hero__image-inner">
-                    <img src="assets/giraffe.png" width="600">
+                    <img src="assets/giraffe.png" width="600" alt="">
                 </div>
             </div>
         </section>
@@ -48,12 +56,13 @@
                     </div>
                     <div class="matches__next-match-container"></div>
                 </div>
-                <div class="matches__previous-matches">
+                <div class="matches__program">
                     <div class="section-heading">
-                        <h2>Edelliset ottelut</h2>
+                        <h2>Otteluohjelma</h2>
                         <span class="section-heading__rule"></span>
                     </div>
-                    <div class="matches__previous-matches-container"></div>
+                    <div class="matches__program-container"></div>
+                    <a class="text-link matches__program-link" href="futsal.html">Koko otteluohjelma &rarr;</a>
                 </div>
             </div>
         </section>
@@ -62,7 +71,16 @@
                 <h2>Sarjataulukko</h2>
                 <span class="section-heading__rule"></span>
             </div>
+            <p class="section-subtitle"></p>
             <div class="table__container"></div>
+            <a class="text-link table__link" href="futsal.html">Kauden kaikki ottelut &rarr;</a>
+        </section>
+        <section class="recaps" id="kaudet" hidden>
+            <div class="section-heading">
+                <h2>P&auml;&auml;ttynyt kausi</h2>
+                <span class="section-heading__rule"></span>
+            </div>
+            <div class="recaps__container"></div>
         </section>
     </main>
     <footer>
