@@ -9,6 +9,11 @@ TEAM_ID = "35213369"
 COMPETITION_ID = "etejp26"
 CATEGORY_ID = "M6"
 
+FUTSAL_TEAM_ID = "35230488"
+FUTSAL_COMPETITION_ID = "etefs2627"
+FUTSAL_CATEGORY_ID = "FM5"
+FUTSAL_GROUP_ID = "1"
+
 def fetch_json(endpoint, params):
     query_params = {"api_key": os.getenv("API_KEY_SECRET")}
     query_params.update(params)
@@ -152,6 +157,22 @@ if __name__ == "__main__":
                 "competition_id": COMPETITION_ID,
                 "category_id": CATEGORY_ID,
                 "group_id": "14",
+            }
+        },
+        {
+            "endpoint": "getMatches",
+            "filename": "futsal_matches.json",
+            "params": {
+                "team_id": FUTSAL_TEAM_ID,
+            }
+        },
+        {
+            "endpoint": "getGroup",
+            "filename": "futsal_group.json",
+            "params": {
+                "competition_id": FUTSAL_COMPETITION_ID,
+                "category_id": FUTSAL_CATEGORY_ID,
+                "group_id": FUTSAL_GROUP_ID,
             }
         }
     ]
