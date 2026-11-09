@@ -65,6 +65,7 @@ async function loadTeam() {
 
     renderIntro();
     renderRoster();
+    renderPitch();
     renderStats("goals");
 
     document.addEventListener("click", event => {
@@ -105,6 +106,96 @@ async function loadTeam() {
                 <span class="stat-tile__label">${t.label}</span>
             </div>
         `).join("");
+    }
+
+    // Tactical board: the squad placed by position on a tilted pitch, attacking to the right
+    function renderPitch() {
+        const container = document.querySelector(".pitch__container");
+        if (!container) return;
+
+        const COLUMNS = [
+            { key: "maalivahti", x: 9 },
+            { key: "puolustaja", x: 31 },
+            { key: "keskikentta", x: 55 },
+            { key: "hyokkaaja", x: 80 },
+        ];
+        let n = 0;
+        const dots = COLUMNS.map(col => {
+            const group = players
+                .filter(p => p.position === col.key)
+                .sort((a, b) => Number(a.shirt_number) - Number(b.shirt_number));
+            return group.map((p, i) => {
+                // long lines zigzag so the markers do not overlap
+                const x = col.x + (group.length > 5 ? (i % 2 ? 2.6 : -2.6) : 0);
+                const y = 9 + ((i + 0.5) / group.length) * 82;
+                const size = 34 + Math.min(Number(p.matches) || 0, 17) * 1.1;
+                return `
+                    <button type="button" class="pitch__player" data-player="${esc(p.player_id)}"
+                        style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;--s:${size.toFixed(0)};--i:${n++}">
+                        <span class="pitch__num">${esc(p.shirt_number)}</span>
+                        ${p.goals > 0 ? `<span class="pitch__goals" title="Maalit">${p.goals}</span>` : ""}
+                        <span class="pitch__name">${esc(p.last_name)}</span>
+                    </button>`;
+            }).join("");
+        }).join("");
+
+        const bench = players.filter(p => !COLUMNS.some(c => c.key === p.position))
+            .sort((a, b) => Number(a.shirt_number) - Number(b.shirt_number));
+        const counts = POSITIONS.filter(pos => pos.key).map(pos => `${players.filter(p => positionOf(p) === pos).length} ${pos.label.toLowerCase()}`).join(" · ");
+
+        const lines = `
+            <svg class="pitch__lines" viewBox="0 0 150 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="2" y="2" width="146" height="96"/>
+                <line x1="75" y1="2" x2="75" y2="98"/>
+                <circle cx="75" cy="50" r="13.5"/><circle cx="75" cy="50" r="0.8"/>
+                <rect x="2" y="20.3" width="24.3" height="59.4"/><rect x="2" y="36.5" width="8.1" height="27"/>
+                <rect x="123.7" y="20.3" width="24.3" height="59.4"/><rect x="139.9" y="36.5" width="8.1" height="27"/>
+                <path d="M26.3 39.2 A13.5 13.5 0 0 1 26.3 60.8"/><path d="M123.7 39.2 A13.5 13.5 0 0 0 123.7 60.8"/>
+                <circle cx="18.2" cy="50" r="0.8"/><circle cx="131.8" cy="50" r="0.8"/>
+            </svg>`;
+
+        container.innerHTML = `
+            <div class="pitch__layout">
+                <div class="pitch__stage"><div class="pitch__field">${lines}${dots}</div></div>
+                <aside class="pitch__info" aria-live="polite"></aside>
+            </div>
+            ${bench.length ? `
+                <div class="pitch__bench">
+                    <span class="pitch__bench-label">Muut</span>
+                    ${bench.map(p => `<button type="button" class="pitch__chip" data-player="${esc(p.player_id)}"><b>${esc(p.shirt_number)}</b> ${esc(fullName(p))}</button>`).join("")}
+                </div>` : ""}
+        `;
+
+        const info = container.querySelector(".pitch__info");
+        const showDefault = () => {
+            info.innerHTML = `
+                <span class="pitch__info-eyebrow">Kokoonpano</span>
+                <h3 class="pitch__info-title">${players.length} pelaajaa</h3>
+                <p class="pitch__info-sub">${esc(counts)}</p>
+                <p class="pitch__info-hint">Merkin koko kertoo pelatut ottelut, pallo maalit. Vie hiiri pelaajan päälle tai valitse hänet nähdäksesi uran.</p>`;
+        };
+        const show = p => {
+            const pos = positionOf(p);
+            info.innerHTML = `
+                <span class="pitch__info-eyebrow">#${esc(p.shirt_number)}${pos.single ? " · " + esc(pos.single) : ""}${p.captain && p.captain !== "0" ? " · Kapteeni" : ""}</span>
+                <h3 class="pitch__info-title">${esc(fullName(p))}</h3>
+                <dl class="pitch__info-stats">
+                    <div><dt>Ottelut</dt><dd>${p.matches}</dd></div>
+                    <div><dt>Maalit</dt><dd>${p.goals}</dd></div>
+                    <div><dt>Syötöt</dt><dd>${p.assists}</dd></div>
+                    <div><dt>Keltaiset</dt><dd>${p.warnings}</dd></div>
+                </dl>
+                <p class="pitch__info-hint">Klikkaa nähdäksesi aiemmat kaudet &rarr;</p>`;
+        };
+        const playerOf = e => {
+            const el = e.target.closest("[data-player]");
+            return el && container.contains(el) ? byId.get(el.dataset.player) : null;
+        };
+        container.addEventListener("mouseover", e => { const p = playerOf(e); if (p) show(p); });
+        container.addEventListener("focusin", e => { const p = playerOf(e); if (p) show(p); });
+        container.addEventListener("mouseleave", showDefault);
+        container.addEventListener("focusout", e => { if (!container.contains(e.relatedTarget)) showDefault(); });
+        showDefault();
     }
 
     function renderRoster() {

@@ -30,6 +30,7 @@ async function loadHome() {
 
     const next = active.upcoming[0];
     if (next) nextContainer.innerHTML = renderNextMatch(next, active);
+    applyMatchday(next);
 
     // A couple of latest results followed by the next fixtures after the featured one
     const recent = active.played.slice(-PROGRAM_RESULTS);
@@ -141,6 +142,25 @@ function renderRecap(s) {
     `;
 }
 
+// Matchday mode: on the day of the featured match (and while it is being played)
+// the hero gets a pulsing "ottelupäivä" treatment
+function applyMatchday(next) {
+    const hero = document.querySelector(".hero");
+    if (!hero || !next || !formatTime(next)) return;
+    const start = kickoff(next).getTime();
+    const now = Date.now();
+    const live = now >= start && now < start + MATCH_DURATION_MS;
+    const today = new Date(start).toDateString() === new Date(now).toDateString();
+    if (!live && !today) return;
+
+    hero.classList.add("is-matchday");
+    if (live) hero.classList.add("is-live");
+    const label = hero.querySelector(".hero__match-label");
+    if (label) label.textContent = live ? "Ottelu käynnissä" : "Ottelupäivä";
+    const eyebrow = hero.querySelector(".hero__eyebrow");
+    if (eyebrow) eyebrow.textContent = `${live ? "Pelataan nyt" : "Tänään"} · klo ${formatTime(next)}${next.venue_name ? " · " + next.venue_name : ""}`;
+}
+
 // Scrolling strip above the header: latest results, then the next fixtures
 function renderTicker(seasons) {
     const ticker = document.querySelector(".ticker");
@@ -176,7 +196,13 @@ function startCountdown() {
     function tick() {
         const left = kickoffAt - Date.now();
         if (left <= 0) {
-            el.hidden = true;
+            // Within the match window the strip says so; afterwards it hides
+            const label = el.querySelector(".match-card__countdown-label");
+            if (left > -MATCH_DURATION_MS) {
+                label.textContent = "Pelataan nyt";
+                out.innerHTML = "";
+                el.hidden = false;
+            } else el.hidden = true;
             return;
         }
         const mins = Math.floor(left / 60000);

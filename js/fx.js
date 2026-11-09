@@ -136,13 +136,20 @@
     }
 
     function initFields() {
+        const env = { reduced, finePointer };
+        // GPU shader first (one continuous field across both sections); the 2D canvas is the fallback
+        const attach = (host, fallbackOptions) => {
+            const gpu = window.createHeroGL ? window.createHeroGL(host, env) : Promise.resolve(false);
+            Promise.resolve(gpu).then(ok => { if (!ok) new Field(host, fallbackOptions); });
+        };
+
         const hero = document.querySelector(".hero");
-        if (hero) new Field(hero, { cell: 170, alpha: 0.55 });
+        if (hero) attach(hero, { cell: 170, alpha: 0.55 });
 
         // The stats band is revealed after its data arrives, so wait for it
         const band = document.querySelector(".statband");
         if (band) {
-            const make = () => new Field(band, { cell: 120, alpha: 0.8 });
+            const make = () => attach(band, { cell: 120, alpha: 0.8 });
             if (!band.hidden) make();
             else new MutationObserver((_, obs) => {
                 if (!band.hidden) { obs.disconnect(); make(); }

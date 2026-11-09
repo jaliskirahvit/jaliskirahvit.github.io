@@ -10,7 +10,7 @@
     const REVEAL = [
         ".section-heading", ".results", ".table__container", ".recap",
         ".gallery__item", ".squad-intro__stats .stat-tile", ".statband__stat",
-        ".roster__group", ".hero__match", ".progress"
+        ".roster__group", ".hero__match", ".progress", ".pitch"
     ].join(",");
 
     const revealObserver = new IntersectionObserver((entries) => {
