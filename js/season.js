@@ -19,6 +19,7 @@ async function loadSeasonPage() {
 
     eyebrow.textContent = [seasonLabel(s) && `Kausi ${seasonLabel(s)}`, s.category].filter(Boolean).join(" · ");
     stats.innerHTML = renderStatTiles(s);
+    renderProgress(document.querySelector(".progress"), s);
 
     if (s.matches.length > 0) {
         fixtures.innerHTML = renderMatchList(s.matches, { showVenue: true });

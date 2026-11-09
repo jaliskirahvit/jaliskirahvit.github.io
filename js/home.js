@@ -25,6 +25,7 @@ async function loadHome() {
     }
 
     const active = pickActive(seasons);
+    renderTicker(seasons);
     const ended = seasons.filter(s => s !== active && s.upcoming.length === 0 && s.played.length > 0);
 
     const next = active.upcoming[0];
@@ -138,6 +139,30 @@ function renderRecap(s) {
             </div>
         </article>
     `;
+}
+
+// Scrolling strip above the header: latest results, then the next fixtures
+function renderTicker(seasons) {
+    const ticker = document.querySelector(".ticker");
+    if (!ticker) return;
+    const byTime = (a, b) => kickoff(a) - kickoff(b);
+    const results = seasons.flatMap(s => s.played).sort(byTime).slice(-4);
+    const fixtures = seasons.flatMap(s => s.upcoming).sort(byTime).slice(0, 5);
+    if (results.length + fixtures.length === 0) return;
+
+    const team = (name, id) => `<span class="${isKirahvit(id) ? "ticker__own" : ""}">${esc(name)}</span>`;
+    const item = (m, played) => {
+        const r = outcome(m);
+        const middle = played
+            ? `<span class="ticker__score ticker__score--${r || "x"}">${esc(m.fs_A)}&ndash;${esc(m.fs_B)}</span>`
+            : `<span>vs</span>`;
+        const when = played ? formatDate(m) : `${formatDate(m)} ${formatTime(m)}`.trim();
+        return `<span class="ticker__item"><span class="ticker__when">${esc(when)}</span>${team(m.team_A_name, m.club_A_id)}${middle}${team(m.team_B_name, m.club_B_id)}</span>`;
+    };
+    const half = results.map(m => item(m, true)).concat(fixtures.map(m => item(m, false))).join("");
+    // The list is repeated so the loop has no gap; the copy is hidden from screen readers
+    ticker.querySelector(".ticker__track").innerHTML = `<span class="ticker__half">${half}</span><span class="ticker__half" aria-hidden="true">${half}</span>`;
+    ticker.hidden = false;
 }
 
 // Counts down to the featured match; the strip hides itself once play has started

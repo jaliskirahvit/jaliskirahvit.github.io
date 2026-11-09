@@ -14,12 +14,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <script>document.documentElement.classList.add("js")</script>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/barlow-condensed-800-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/nav.js" defer></script>
     <script src="js/motion.js" defer></script>
+    <script src="js/fx.js" defer></script>
     <script src="js/matches.js" defer></script>
+    <script src="js/charts.js" defer></script>
     <script src="js/season.js" defer></script>
 </head>
 <body data-season="futsal">
@@ -50,6 +53,13 @@
             <span class="hero__eyebrow"></span>
             <h1>Futsal</h1>
             <div class="squad-intro__stats"></div>
+        </section>
+        <section class="progress" id="kulku" hidden>
+            <div class="section-heading">
+                <h2>Kauden kulku</h2>
+                <span class="section-heading__rule"></span>
+            </div>
+            <div class="progress__panel"></div>
         </section>
         <section class="fixtures" id="ottelut">
             <div class="section-heading">

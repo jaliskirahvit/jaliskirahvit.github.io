@@ -111,6 +111,7 @@ async function loadSeason(season) {
         own: teams.find(t => isKirahvit(t.club_id)) || null,
         category: (group && group.category_name) || ref.category_name || "",
         groupName: (group && group.group_name) || ref.group_name || "",
+        groupId: group ? String(group.group_id) : "",
         seasonName: ref.competition_season || "",
         played: matches.filter(isPlayed),
         upcoming: matches.filter(m => isUpcoming(m)),
