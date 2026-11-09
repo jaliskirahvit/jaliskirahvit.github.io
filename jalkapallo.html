@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jalkapallo | FC Jaliskirahvit</title>
+    <meta name="description" content="FC Jaliskirahvitin jalkapallokausi: otteluohjelma, tulokset ja sarjataulukko.">
+    <meta name="theme-color" content="#2a1408">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FC Jaliskirahvit">
+    <meta property="og:title" content="Jalkapallo | FC Jaliskirahvit">
+    <meta property="og:description" content="FC Jaliskirahvitin jalkapallokausi: otteluohjelma, tulokset ja sarjataulukko.">
+    <meta property="og:image" content="https://jaliskirahvit.fi/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <script>document.documentElement.classList.add("js")</script>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/barlow-condensed-800-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/motion.js" defer></script>
     <script src="js/matches.js" defer></script>
     <script src="js/season.js" defer></script>
 </head>
 <body data-season="jalkapallo">
     <header>
         <div class="header__logo-container">
-            <a href="index.html"><img src="assets/logo.png" width="120"></a>
+            <a href="index.html"><img src="assets/logo-240.png" width="64" height="64" alt="FC Jaliskirahvit – etusivu"></a>
         </div>
-        <nav class="header__menu">
+        <nav class="header__menu" id="site-nav" aria-label="Päävalikko">
             <div class="header__menu-item">
                 <a href="index.html">Etusivu</a>
             </div>
@@ -28,6 +41,9 @@
                 <a href="joukkue.html">Joukkue</a>
             </div>
         </nav>
+        <button class="header__toggle" type="button" aria-label="Avaa valikko" aria-expanded="false" aria-controls="site-nav">
+            <span></span><span></span><span></span>
+        </button>
     </header>
     <main>
         <section class="squad-intro">
@@ -52,28 +68,32 @@
         </section>
     </main>
     <footer>
-        <div class="footer__content-main">
-            <div class="footer__content-left">
-                <div class="footer__name"><p>FC Jaliskirahvit ry</p></div>
-                <div class="footer__email"><a href="mailto:fcjaliskirahvit@gmail.com">fcjaliskirahvit@gmail.com</a></div>
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <img src="assets/logo-240.png" width="72" height="72" alt="FC Jaliskirahvit">
+                <span class="footer__name">FC Jaliskirahvit ry</span>
+                <p>Helsinkiläinen jalkapalloseura. Kesällä nurmella, talvella futsal-kentällä.</p>
             </div>
-            <div class="footer__content-right">
-                <div class="footer__socials">
-                    <div class="footer__socials-instagram">
-                        <a href="https://instagram.com/fcjaliskirahvit/" target="_blank">
-                            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M34.3125 8.25C32.8125 8.25 31.6875 9.375 31.6875 10.875C31.6875 12.375 32.8125 13.5 34.3125 13.5C35.8125 13.5 36.9375 12.375 36.9375 10.875C36.9375 9.375 35.8125 8.25 34.3125 8.25Z" fill="#74370c"/>
-                                <path d="M22.5 11.625C16.3125 11.625 11.4375 16.6875 11.4375 22.6875C11.4375 28.6875 16.5 33.75 22.5 33.75C28.5 33.75 33.5625 28.6875 33.5625 22.6875C33.5625 16.6875 28.6875 11.625 22.5 11.625ZM22.5 29.8125C18.5625 29.8125 15.375 26.625 15.375 22.6875C15.375 18.75 18.5625 15.5625 22.5 15.5625C26.4375 15.5625 29.625 18.75 29.625 22.6875C29.625 26.625 26.4375 29.8125 22.5 29.8125Z" fill="#74370c"/>
-                                <path d="M31.5 0H13.6875C6 0 0 6 0 13.5V31.3125C0 38.8125 6 44.8125 13.5 44.8125H31.3125C38.8125 44.8125 44.8125 38.8125 44.8125 31.3125V13.5C45 6 39 0 31.5 0ZM40.6875 31.5C40.6875 36.5625 36.5625 40.875 31.3125 40.875H13.5C8.4375 40.875 4.125 36.75 4.125 31.5V13.6875C4.125 8.625 8.25 4.3125 13.5 4.3125H31.3125C36.375 4.3125 40.6875 8.4375 40.6875 13.6875V31.5Z" fill="#74370c"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="footer__col">
+                <h3>Sivusto</h3>
+                <ul>
+                    <li><a href="index.html">Etusivu</a></li>
+                    <li><a href="futsal.html">Futsal</a></li>
+                    <li><a href="jalkapallo.html">Jalkapallo</a></li>
+                    <li><a href="joukkue.html">Joukkue</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h3>Yhteys</h3>
+                <ul>
+                    <li><a href="mailto:fcjaliskirahvit@gmail.com">fcjaliskirahvit@gmail.com</a></li>
+                    <li><a class="footer__social" href="https://instagram.com/fcjaliskirahvit/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 45 45" aria-hidden="true"><path d="M34.3125 8.25C32.8125 8.25 31.6875 9.375 31.6875 10.875C31.6875 12.375 32.8125 13.5 34.3125 13.5C35.8125 13.5 36.9375 12.375 36.9375 10.875C36.9375 9.375 35.8125 8.25 34.3125 8.25Z"/><path d="M22.5 11.625C16.3125 11.625 11.4375 16.6875 11.4375 22.6875C11.4375 28.6875 16.5 33.75 22.5 33.75C28.5 33.75 33.5625 28.6875 33.5625 22.6875C33.5625 16.6875 28.6875 11.625 22.5 11.625ZM22.5 29.8125C18.5625 29.8125 15.375 26.625 15.375 22.6875C15.375 18.75 18.5625 15.5625 22.5 15.5625C26.4375 15.5625 29.625 18.75 29.625 22.6875C29.625 26.625 26.4375 29.8125 22.5 29.8125Z"/><path d="M31.5 0H13.6875C6 0 0 6 0 13.5V31.3125C0 38.8125 6 44.8125 13.5 44.8125H31.3125C38.8125 44.8125 44.8125 38.8125 44.8125 31.3125V13.5C45 6 39 0 31.5 0ZM40.6875 31.5C40.6875 36.5625 36.5625 40.875 31.3125 40.875H13.5C8.4375 40.875 4.125 36.75 4.125 31.5V13.6875C4.125 8.625 8.25 4.3125 13.5 4.3125H31.3125C36.375 4.3125 40.6875 8.4375 40.6875 13.6875V31.5Z"/></svg>
+                        Instagram</a></li>
+                </ul>
             </div>
         </div>
-        <div class="footer__content-bottom">
-            <div class="footer__copyright"><p>&#169; Jaliskirahvit 2026</p></div>
-        </div>
+        <div class="footer__bottom"><p>&#169; FC Jaliskirahvit ry 2026</p></div>
     </footer>
     <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>

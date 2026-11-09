@@ -1,7 +1,7 @@
 /* Team page */
 
 button {
-    font-family: "Playfair Display", serif;
+    font-family: var(--font-ui);
     color: var(--main-text);
 }
 
@@ -25,9 +25,9 @@ button {
 }
 
 .roster__group-title {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-muted);
     margin-bottom: 12px;
@@ -35,7 +35,7 @@ button {
 
 .roster__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 12px;
 }
 
@@ -416,6 +416,90 @@ button {
         display: none;
     }
     .career__current .stat-tile__value {
+        font-size: 22px;
+    }
+}
+
+
+/* Player cards: the shirt number is the graphic */
+
+.roster__grid .player-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0;
+    min-height: 156px;
+    padding: 16px;
+}
+.roster__grid .player-card__number {
+    position: absolute;
+    top: -4px;
+    right: 8px;
+    z-index: -1;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    font-family: var(--font-display);
+    font-size: 110px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(240, 167, 58, 0.24);
+    transition: color 0.2s ease, transform 0.3s ease;
+}
+.roster__grid .player-card__first {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.roster__grid .player-card__last {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 2px;
+}
+.roster__grid .player-card:hover,
+.roster__grid .player-card:focus-visible {
+    background: var(--dark);
+    border-color: var(--dark);
+}
+.roster__grid .player-card:hover .player-card__number,
+.roster__grid .player-card:focus-visible .player-card__number {
+    color: rgba(240, 167, 58, 0.55);
+    transform: translateY(4px) scale(1.05);
+}
+.roster__grid .player-card:hover .player-card__first,
+.roster__grid .player-card:focus-visible .player-card__first {
+    color: var(--accent);
+}
+.roster__grid .player-card:hover .player-card__last,
+.roster__grid .player-card:focus-visible .player-card__last {
+    color: #fff;
+}
+.roster__grid .player-card:hover .player-card__meta,
+.roster__grid .player-card:focus-visible .player-card__meta {
+    color: rgba(250, 241, 224, 0.75);
+}
+.roster__grid .captain-badge {
+    border-color: currentColor;
+}
+@media screen and (max-width: 600px) {
+    .roster__grid .player-card {
+        min-height: 124px;
+        padding: 12px;
+    }
+    .roster__grid .player-card__number {
+        font-size: 78px;
+    }
+    .roster__grid .player-card__last {
         font-size: 22px;
     }
 }

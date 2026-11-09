@@ -126,31 +126,40 @@ function crest(src) {
 }
 
 function sportBadge(s) {
-    return `<span class="sport-badge">${esc(s.name)}</span>`;
+    return `<span class="sport-badge sport-badge--${esc(s.key)}">${esc(s.name)}</span>`;
 }
 
 const PIN_ICON = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`;
 
 function renderNextMatch(m, season) {
     const time = formatTime(m);
+    const side = (name, id, src) => `
+        <div class="team">
+            <img src="${crest(src)}" width="92" height="92" alt="">
+            <span class="${isKirahvit(id) ? "kirahvit-team" : ""}">${esc(name)}</span>
+        </div>`;
     return `
         <div class="match-card match-card--next">
             <div class="match-card__meta">
                 ${sportBadge(season)}
                 <span class="match-card__competition">${esc(m.category_name)}</span>
             </div>
-            <div class="match-card__date">
-                ${formatDate(m)}${time ? `, klo ${time}` : ""}
-            </div>
             <div class="match-card__teams">
-                <span class="team"><img src="${crest(m.club_A_crest)}" width="60" alt=""><span class="${isKirahvit(m.club_A_id) ? "kirahvit-team" : ""}">${esc(m.team_A_name)}</span></span>
-                <span class="vs">vs</span>
-                <span class="team"><span class="${isKirahvit(m.club_B_id) ? "kirahvit-team" : ""}">${esc(m.team_B_name)}</span><img src="${crest(m.club_B_crest)}" width="60" alt=""></span>
+                ${side(m.team_A_name, m.club_A_id, m.club_A_crest)}
+                <div class="match-card__center">
+                    <span class="match-card__time">${time || "&ndash;"}</span>
+                    <span class="match-card__day">${esc(formatDate(m))}</span>
+                </div>
+                ${side(m.team_B_name, m.club_B_id, m.club_B_crest)}
             </div>
             <div class="match-card__venue">
                 ${PIN_ICON}
                 ${esc(m.venue_name || "Pelipaikka avoin")}
             </div>
+            ${time ? `<div class="match-card__countdown" data-kickoff="${kickoff(m).getTime()}" hidden>
+                <span class="match-card__countdown-label">Alkuun</span>
+                <span class="match-card__countdown-time"></span>
+            </div>` : ""}
         </div>
     `;
 }

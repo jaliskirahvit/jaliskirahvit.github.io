@@ -48,6 +48,8 @@ async function loadHome() {
         heroSeason.hidden = false;
     }
 
+    renderStatBand(seasons);
+
     if (ended.length > 0) {
         recapContainer.innerHTML = ended.map(renderRecap).join("");
         recapSection.hidden = false;
@@ -62,6 +64,38 @@ function pickActive(seasons) {
     }
     const lastPlayed = s => s.played.length ? kickoff(s.played[s.played.length - 1]).getTime() : 0;
     return seasons.slice().sort((a, b) => lastPlayed(b) - lastPlayed(a))[0];
+}
+
+// Latest season with games played: the record as big numbers under the hero
+function renderStatBand(seasons) {
+    const band = document.querySelector(".statband");
+    if (!band) return;
+    const lastPlayed = s => kickoff(s.played[s.played.length - 1]).getTime();
+    const s = seasons
+        .filter(t => t.own && Number(t.own.matches_played) > 0 && t.played.length > 0)
+        .sort((a, b) => lastPlayed(b) - lastPlayed(a))[0];
+    if (!s) return;
+
+    const own = s.own;
+    const tiles = [
+        { value: `${own.current_standing}.`, label: "Sija sarjassa" },
+        { value: own.points, label: "Pistettä" },
+        { value: `${own.matches_won}–${own.matches_tied}–${own.matches_lost}`, label: "V – T – H" },
+        { value: `${own.goals_for}–${own.goals_against}`, label: "Maalit" },
+    ];
+    const live = s.upcoming.length > 0;
+    band.querySelector(".statband__eyebrow").textContent = `${live ? "Kausi käynnissä" : "Viimeisin kausi"} · ${s.name} ${seasonLabel(s)}`;
+    band.querySelector("h2").textContent = s.category;
+    const link = band.querySelector(".statband__link");
+    link.href = s.page;
+    link.innerHTML = "Ottelut ja sarjataulukko &rarr;";
+    band.querySelector(".statband__grid").innerHTML = tiles.map(t => `
+        <div class="statband__stat">
+            <span class="statband__value">${esc(t.value)}</span>
+            <span class="statband__label">${esc(t.label)}</span>
+        </div>
+    `).join("");
+    band.hidden = false;
 }
 
 function renderRecap(s) {
@@ -106,4 +140,28 @@ function renderRecap(s) {
     `;
 }
 
-loadHome();
+// Counts down to the featured match; the strip hides itself once play has started
+function startCountdown() {
+    const el = document.querySelector(".match-card__countdown");
+    if (!el) return;
+    const kickoffAt = Number(el.dataset.kickoff);
+    const out = el.querySelector(".match-card__countdown-time");
+    const cd = (n, unit) => `<span class="cd"><b>${n}</b><i>${unit}</i></span>`;
+
+    function tick() {
+        const left = kickoffAt - Date.now();
+        if (left <= 0) {
+            el.hidden = true;
+            return;
+        }
+        const mins = Math.floor(left / 60000);
+        const d = Math.floor(mins / 1440);
+        const h = Math.floor((mins % 1440) / 60);
+        out.innerHTML = cd(d, "pv") + cd(h, "t") + cd(mins % 60, "min");
+        el.hidden = false;
+    }
+    tick();
+    setInterval(tick, 30000);
+}
+
+loadHome().then(startCountdown);
