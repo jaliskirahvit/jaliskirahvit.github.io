@@ -101,6 +101,7 @@ Mene repossa kohtaan **Settings → Secrets and variables → Actions**.
 | Secret | `IG_ACCESS_TOKEN` | token kohdasta 3 |
 | Secret | `IG_USER_ID` | `user_id` kohdasta 3 |
 | Secret | `SECRETS_PAT` | ks. alla (tokenin automaattinen uusiminen) |
+| Variable | `IG_API_HOST` | vain Facebook Login -polulla: `graph.facebook.com` (sivun token, ei vanhene) |
 | Variable | `STORY_PUBLISH` | `true`, kun haluat julkaisun päälle |
 
 **Tokenin uusiminen:** Instagram-token vanhenee 60 päivässä. Workflow `Instagram token refresh` uusii sen kahdesti kuukaudessa ja tallentaa uuden tokenin secretiin. Tallentamiseen tarvitaan oma GitHub-token:
