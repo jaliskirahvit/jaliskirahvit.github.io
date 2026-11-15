@@ -137,10 +137,11 @@ def next_fixture(matches, after):
 # ---------------------------------------------------------------- scorers
 
 def _name(e):
-    name = e.get("player_name") or e.get("name") or ""
-    if not name:
-        name = " ".join(x for x in (e.get("first_name"), e.get("last_name")) if x)
-    return name.strip()
+    if e.get("first_name") or e.get("last_name"):
+        return " ".join(x for x in (e.get("first_name"), e.get("last_name")) if x).strip()
+    # Torneopal events list players as "Sukunimi Etunimi"
+    parts = (e.get("player_name") or e.get("name") or "").split()
+    return " ".join(parts[-1:] + parts[:-1])
 
 
 def _event_code(e):
