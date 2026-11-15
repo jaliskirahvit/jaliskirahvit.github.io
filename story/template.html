@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<title>Ottelutarina</title>
+<style>
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; src: url(../assets/fonts/barlow-condensed-700.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; src: url(../assets/fonts/barlow-condensed-800.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; font-style: italic; src: url(../assets/fonts/barlow-condensed-800-italic.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; src: url(../assets/fonts/inter-latin.woff2) format("woff2"); }
+
+:root {
+    --cream: #faf1e0;
+    --sand: #d9bba5;
+    --brown: #74370c;
+    --night: #2a1408;
+    --accent: #f0a73a;
+}
+.win  { --accent: #f0a73a; }
+.draw { --accent: #ffd58a; }
+.loss { --accent: #e9d6c6; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+
+.story {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    color: var(--cream);
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+}
+.photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+.shade {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(180deg, rgba(42,20,8,.82) 0%, rgba(42,20,8,.35) 22%, rgba(42,20,8,.45) 42%, rgba(42,20,8,.93) 62%, rgba(42,20,8,.97) 100%);
+}
+.print {
+    position: absolute; right: -140px; bottom: 120px;
+    width: 560px; opacity: .07;
+}
+
+/* Instagram covers roughly the top and bottom 250px with its own UI */
+.content {
+    position: absolute; inset: 0;
+    padding: 250px 80px 230px;
+    display: flex; flex-direction: column;
+}
+
+.top { display: flex; align-items: center; gap: 28px; }
+.top img { width: 120px; height: 120px; object-fit: contain; }
+.top .label {
+    font-family: "Barlow Condensed"; font-weight: 700;
+    font-size: 40px; letter-spacing: .14em; text-transform: uppercase; color: var(--sand);
+}
+.top .meta { font-size: 30px; margin-top: 6px; opacity: .9; }
+
+.headline {
+    margin-top: 70px;
+    font-family: "Barlow Condensed"; font-weight: 800; font-style: italic;
+    font-size: 230px; line-height: .85; letter-spacing: -.01em;
+    color: var(--accent);
+    text-shadow: 0 8px 40px rgba(0,0,0,.45);
+}
+
+.score {
+    margin-top: 380px;
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px;
+}
+.team { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.team img {
+    width: 150px; height: 150px; object-fit: contain;
+    background: rgba(250,241,224,.95); border-radius: 50%; padding: 18px;
+}
+.team .name {
+    font-family: "Barlow Condensed"; font-weight: 700;
+    font-size: 38px; line-height: 1.05; text-transform: uppercase; letter-spacing: .03em;
+    max-width: 300px;
+}
+.team.own .name { color: var(--accent); }
+.digits {
+    font-family: "Barlow Condensed"; font-weight: 800;
+    font-size: 210px; line-height: 1; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+.digits span { display: inline-block; width: 56px; height: 10px; background: currentColor; opacity: .6; margin: 0 26px; vertical-align: middle; border-radius: 5px; }
+
+.scorers { margin-top: 60px; }
+.scorers h2 {
+    font-family: "Barlow Condensed"; font-weight: 700;
+    font-size: 36px; letter-spacing: .16em; color: var(--sand);
+    border-bottom: 2px solid rgba(217,187,165,.35); padding-bottom: 12px; margin-bottom: 18px;
+}
+.scorers ul { list-style: none; columns: var(--cols, 1); column-gap: 50px; }
+.scorers li {
+    display: flex; align-items: center; gap: 18px;
+    font-size: var(--size, 44px); font-weight: 600; line-height: 1.5;
+    break-inside: avoid;
+}
+.scorers li svg { width: .8em; height: .8em; flex: none; }
+.scorers li .count { color: var(--accent); font-family: "Barlow Condensed"; font-weight: 800; }
+.scorers .none { font-size: 36px; opacity: .7; }
+
+.bottom {
+    margin-top: auto;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 30px;
+    font-size: 30px;
+}
+.next .label {
+    font-family: "Barlow Condensed"; font-weight: 700;
+    font-size: 30px; letter-spacing: .16em; color: var(--sand);
+}
+.next .what { font-size: 36px; font-weight: 600; margin-top: 4px; }
+.site { opacity: .75; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="story" id="story">
+    <img class="photo" id="photo" alt="">
+    <div class="shade"></div>
+    <img class="print" src="../assets/giraffe-print.webp" alt="">
+    <div class="content">
+        <div class="top">
+            <img src="../assets/logo-240.png" alt="">
+            <div>
+                <div class="label">Lopputulos</div>
+                <div class="meta" id="meta"></div>
+            </div>
+        </div>
+        <div class="headline" id="headline"></div>
+        <div class="score">
+            <div class="team" id="home"></div>
+            <div class="digits" id="digits"></div>
+            <div class="team" id="away"></div>
+        </div>
+        <div class="scorers" id="scorers"></div>
+        <div class="bottom">
+            <div class="next" id="next"></div>
+            <div class="site" id="site"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const BALL = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#faf1e0"/><path fill="#2a1408" d="M12 6.2l4.1 3-1.6 4.8h-5l-1.6-4.8zM3.6 9.6l2.7-.1 1.5 4.6-2.2 3.4-2.6-.8A9.6 9.6 0 0 1 3.6 9.6zm16.8 0a9.6 9.6 0 0 1 .6 7.1l-2.6.8-2.2-3.4 1.5-4.6zM9.4 16h5.2l2 3.1-.9 2.3a9.6 9.6 0 0 1-7.4 0l-.9-2.3z"/></svg>';
+const OWN_CREST = "../assets/logo-240.png";
+const UNKNOWN_CREST = "../assets/unknown_logo.png";
+
+function esc(v) {
+    return String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function team(t) {
+    const crest = t.own ? OWN_CREST : (t.crest || UNKNOWN_CREST);
+    return `<img src="${esc(crest)}" onerror="this.onerror=null;this.src='${UNKNOWN_CREST}'" alt="">
+            <div class="name">${esc(t.name)}</div>`;
+}
+
+function waitImages() {
+    return Promise.all([...document.images].map(img => img.complete ? null :
+        new Promise(r => { img.addEventListener("load", r); img.addEventListener("error", r); })));
+}
+
+window.renderStory = async function (d) {
+    const story = document.getElementById("story");
+    story.className = `story ${d.result}`;
+
+    const photo = document.getElementById("photo");
+    if (d.photo) photo.src = d.photo; else photo.remove();
+
+    document.getElementById("meta").textContent = [d.category, d.date].filter(Boolean).join(" · ");
+    document.getElementById("headline").textContent = d.headline;
+    document.getElementById("home").innerHTML = team(d.home);
+    document.getElementById("away").innerHTML = team(d.away);
+    document.getElementById("home").classList.toggle("own", d.home.own);
+    document.getElementById("away").classList.toggle("own", d.away.own);
+    document.getElementById("digits").innerHTML = `${d.home.score}<span></span>${d.away.score}`;
+
+    const scorers = d.scorers || [];
+    const box = document.getElementById("scorers");
+    if (scorers.length) {
+        // Long lists go to two columns and smaller type so they stay above the footer
+        const cols = scorers.length > 4 ? 2 : 1;
+        const rows = Math.ceil(scorers.length / cols);
+        box.style.setProperty("--cols", cols);
+        box.style.setProperty("--size", `${rows > 4 ? 34 : cols > 1 ? 38 : 44}px`);
+        box.innerHTML = `<h2>MAALINTEKIJÄT</h2><ul>${scorers.map(s =>
+            `<li>${BALL}<span>${esc(s.name)}</span>${s.goals > 1 ? `<span class="count">×${s.goals}</span>` : ""}</li>`
+        ).join("")}</ul>`;
+    } else if ((d.home.own ? d.home.score : d.away.score) > 0) {
+        box.innerHTML = `<h2>MAALINTEKIJÄT</h2><div class="none">Tiedot päivittyvät tulospalveluun</div>`;
+    }
+
+    const n = d.next;
+    document.getElementById("next").innerHTML = n ? `
+        <div class="label">SEURAAVA OTTELU</div>
+        <div class="what">${esc(n.date)}${n.time ? ` klo ${esc(n.time)}` : ""} · ${n.home ? "vs" : "@"} ${esc(n.opponent)}</div>` : "";
+    document.getElementById("site").textContent = d.site || "";
+
+    await document.fonts.ready;
+    await waitImages();
+    window.storyReady = true;
+};
+</script>
+</body>
+</html>

@@ -8,6 +8,10 @@ on:
 permissions:
     contents: write
 
+concurrency:
+    group: data-update
+    cancel-in-progress: false
+
 jobs:
     update-data:
         runs-on: ubuntu-latest
@@ -24,12 +28,47 @@ jobs:
               run: pip install requests
 
             - name: Run fetch script
-              env: 
+              env:
                 API_KEY_SECRET: ${{ secrets.TASO_API_KEY }}
               run: python fetch_data.py
+
+            # Instagram story for new futsal results, see story/README.md
+            - name: Find new futsal results
+              id: story
+              continue-on-error: true
+              env:
+                API_KEY_SECRET: ${{ secrets.TASO_API_KEY }}
+              run: python story/story.py prepare
+
+            - name: Render story image
+              if: steps.story.outputs.render == 'true'
+              continue-on-error: true
+              run: |
+                pip install playwright
+                python -m playwright install --with-deps chromium
+                python story/story.py render
 
             - name: Commit and push changes
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
                 commit_message: "Automated daily data update"
-                file_pattern: "assets/*.json"
+                file_pattern: "assets/*.json assets/stories/*"
+
+            # The image is fetched by Instagram from GitHub Pages, so this runs after the push
+            - name: Publish story
+              id: publish
+              if: steps.story.outputs.publish == 'true'
+              env:
+                IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+                IG_USER_ID: ${{ secrets.IG_USER_ID }}
+                STORY_PUBLISH: ${{ vars.STORY_PUBLISH }}
+              run: |
+                pip install requests
+                python story/story.py publish
+
+            - name: Commit story state
+              if: always() && steps.story.outputs.publish == 'true'
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                commit_message: "Instagram story published"
+                file_pattern: "assets/stories/state.json"
