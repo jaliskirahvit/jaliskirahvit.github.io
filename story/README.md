@@ -1,147 +1,105 @@
 # Instagram-tarina futsal-tuloksista
 
-Tunnin välein ajettava `Daily data update` -workflow tekee tarinan automaattisesti, kun futsal-ottelun tulos ilmestyy tulospalveluun.
+Kun futsal-ottelun tulos ilmestyy tulospalveluun, @fcjaliskirahvit-tilille julkaistaan automaattisesti tarina. Siinä näkyvät lopputulos, maalintekijät ja seuraava ottelu.
 
-1. **prepare**: tunnistaa uudet tulokset tiedostosta `assets/futsal_matches.json` (`status == "Played"`) ja hakee maalintekijät `getMatch`-rajapinnasta. Jos kaikkia maaleja ei ole vielä kirjattu, se odottaa enintään 12 tuntia ja julkaisee sen jälkeen ilman puuttuvia nimiä. Yli 3 päivää vanhoja otteluita ei julkaista.
-2. **render**: tekee pohjasta `story/template.html` 1080×1920-kuvan `assets/stories/<match_id>.jpg`.
+## Näin se toimii
+
+Workflow `daily_update.yml` ajaa datan haun jälkeen nämä vaiheet:
+
+1. **prepare** (`story/story.py prepare`): etsii tiedostosta `assets/futsal_matches.json` uudet pelatut ottelut (`status == "Played"`) ja hakee maalintekijät tulospalvelun `getMatch`-tapahtumista (koodi `maali`).
+   - Jos maalintekijöitä on kirjattu vähemmän kuin maaleja, se odottaa enintään 12 tuntia ja julkaisee sen jälkeen ilman puuttuvia nimiä.
+   - Yli 3 päivää vanhoja otteluita ei julkaista.
+2. **render**: tekee pohjasta `story/template.html` 1080×1920-kuvan `assets/stories/<match_id>.jpg` (Playwright + Chromium).
 3. Kuva commitoidaan, jolloin GitHub Pages julkaisee sen osoitteessa `https://www.jaliskirahvit.fi/assets/stories/…`.
-4. **publish**: julkaisee kuvan tarinana Instagram Graph API:n kautta.
+4. **publish**: Instagram hakee kuvan tästä osoitteesta, ja se julkaistaan tarinana Graph API:n kautta.
 
-Tila tallennetaan tiedostoon `assets/stories/state.json`. Siinä on jokaisen ottelun tila: `waiting` (odottaa), `ready` (valmis renderöitäväksi), `rendered` (renderöity), `published` (julkaistu) tai `skipped` (ohitettu). Ottelua ei julkaista kahdesti. Jos tarina pitää julkaista uudelleen, poista ottelun rivi tiedostosta.
+**Ottelupäivän vahti** (`story/watch.py`, `matchday_watch.yml`): GitHub ajaa tunnin välein ajastetun päivityksen käytännössä vain muutaman kerran päivässä. Kun datapäivitys huomaa saman päivän ottelun, se käynnistää vahdin. Vahti odottaa, kunnes aloituksesta on kulunut 55 minuuttia, ja käynnistää sen jälkeen datapäivityksen 10 minuutin välein, kunnes tarina on julkaistu tai aloituksesta on kulunut 8 tuntia. Varalla vahti käynnistyy myös ajastetusti joka aamu.
 
-**Julkaisu on päällä.** Sen saa tauolle asettamalla repolle muuttujan `STORY_PUBLISH=false`. Silloin kuvat vain renderöidään ja commitoidaan.
+### Tila
 
----
+Tila tallennetaan tiedostoon `assets/stories/state.json`. Jokaisella ottelulla on yksi tila:
+
+| Tila | Merkitys |
+|---|---|
+| `waiting` | Tulos on tullut, mutta maalintekijöitä odotetaan |
+| `ready` | Valmis renderöitäväksi |
+| `rendered` | Kuva on tehty, julkaisu odottaa |
+| `published` | Julkaistu (`media_id`, `published_at`) |
+| `skipped` | Ohitettu (liian vanha) |
+
+Ottelua ei julkaista kahdesti. Jos tarina pitää tehdä uudelleen, poista ottelun rivi tiedostosta.
+
+### Julkaisun keskeytys
+
+Julkaisu on oletuksena päällä. Sen saa tauolle asettamalla repoon muuttujan `STORY_PUBLISH` = `false` (Settings → Secrets and variables → Actions → Variables). Tauon aikana kuvat renderöidään ja commitoidaan, mutta niitä ei julkaista.
+
+### Kohokohta
+
+Instagramin rajapinta ei tue kohokohtia, joten tarina pitää lisätä kohokohtaan **Futsal** käsin: avaa tarina profiilista → **Kohokohta** → *Futsal*.
 
 ## Kuvat
 
-Lisää kuvia kansioihin:
-
-| Kansio | Käytetään kun |
+| Kansio | Käytetään, kun |
 |---|---|
 | `assets/story-photos/voitto/` | voitto |
 | `assets/story-photos/tasapeli/` | tasapeli |
 | `assets/story-photos/tappio/` | tappio |
-| `assets/story-photos/yleinen/` | tuloskansio on tyhjä |
+| `assets/story-photos/yleinen/` | tuloksen kansio on tyhjä |
 
-Jos kaikki kansiot ovat tyhjiä, käytetään sivuston kuvia kansiosta `assets/photos/`.
-
-- Nykyiset kuvat on valittu Drive-kansiosta *Jaliskirahvit / Edited* ja rajattu valmiiksi kokoon 1080×1920 (pystyrajaus, JPEG ~450 kt). Uudet kuvat kannattaa rajata samoin.
-- Pystykuvat toimivat parhaiten. Kuva rajataan täyttämään 1080×1920 ja kohdistetaan hieman yläosaan.
-- Muodot: JPG, PNG tai WEBP. Pidä kuvat alle noin 1 MB:n kokoisina (pitkä sivu noin 2000 px riittää), koska repo on julkinen ja jokainen kuva jää historiaan.
+- Nykyiset kuvat on valittu joukkueen kuvaajan kuvista. Ne on rajattu valmiiksi pystymuotoon 1080×1920, JPEG-muodossa ja kooltaan noin 450 kt. Rajaa uudet kuvat samoin.
+- Kuva valitaan ottelun tunnisteen perusteella, joten uudelleenrenderöinti tuottaa aina saman kuvan.
 - **Repo on julkinen**, joten myös kuvat ovat julkisia. Käytä vain kuvia, joiden julkaisuun kuvissa näkyvät pelaajat ovat suostuneet.
-- Kuva valitaan ottelun tunnisteen perusteella aina samalla tavalla, joten uudelleenrenderöinti tuottaa saman kuvan.
 
-## Esikatselu omalla koneella
+## Testaus
 
-```bash
-pip install requests playwright
-python -m playwright install chromium
+- **Story test** (Actions → *Story test* → Run workflow): ajo renderöi jo pelatusta ottelusta tarinan oikeilla maalintekijöillä (oletuksena jalkapallo-ottelu 4157579), julkaisee kuvan tiedostoon `assets/stories/test.jpg` ja tarkistaa, että Instagram hyväksyy sen tarinaksi. **Mitään ei julkaista.** Hyväksytty luonnos poistuu Instagramista itsestään 24 tunnissa.
+- **Paikallinen esikatselu:**
 
-# Mikä tahansa jo pelattu ottelu, myös jalkapallosta. --offline ohittaa API-kutsun.
-python story/story.py preview 4157579 --matches assets/matches.json --offline \
-    --scorers "Matti Meikäläinen,Matti Meikäläinen,Kalle Kirahvi"
-# -> assets/stories/preview/4157579.jpg (ei commitoida)
+  ```bash
+  pip install requests playwright
+  python -m playwright install chromium
 
-# getMatch-vastauksen raakadata (vaatii API_KEY_SECRET-ympäristömuuttujan)
-API_KEY_SECRET=... python story/story.py dump 4363827
-```
+  # --offline ohittaa API-kutsun, --scorers antaa testinimet
+  python story/story.py preview 4157579 --matches assets/matches.json --offline \
+      --scorers "Matti Meikäläinen,Matti Meikäläinen,Kalle Kirahvi"
+  # -> assets/stories/preview/4157579.jpg (ei commitoida)
 
-> **Tarkistettava ensimmäisen futsal-ottelun jälkeen:** `getMatch`-vastauksen maalitapahtumien tarkkaa muotoa ei ole vielä varmistettu. Jäsennin (`extract_goals`) hyväksyy yleisimmät muodot (`events`/`goals`-lista, jonka koodissa on "maali" tai "goal", tai `lineups`-listan maalimäärät). Aja ensimmäisen pelatun ottelun jälkeen `dump`-komento ja tarkista, että maalintekijät löytyvät ja että omat maalit lasketaan oikealle joukkueelle. Jos ottelu jää tilaan `waiting`, Actions-loki näyttää vastauksen avaimet ja tapahtumakoodit.
+  # Oikeat maalintekijät ja getMatch-raakadata (vaatii API-avaimen)
+  API_KEY_SECRET=... python story/story.py preview 4157579 --matches assets/matches.json
+  API_KEY_SECRET=... python story/story.py dump 4157579
+  ```
 
----
+## Tunnukset
 
-## Instagram-tunnusten käyttöönotto
+Julkaisu käyttää **Instagram Graph API:a Facebook Loginin kautta**:
 
-Käytössä on **Instagram API with Instagram Login**. Se ei vaadi Facebook-sivua eikä Google Cloudia. Tarvitset:
+- Instagram-tili @fcjaliskirahvit on yritystili (Business), joka on yhdistetty Facebook-sivuun **FC Jaliskirahvit**.
+- Joukkueen Meta-sovellus ([developers.facebook.com/apps](https://developers.facebook.com/apps/)) on Development-tilassa. App Review -tarkastusta ei tarvita, koska julkaisu tehdään vain omalle tilille.
+- Oikeudet: `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement` ja `business_management`.
 
-- fcjaliskirahvit-tilin tunnukset
-- jonkun henkilökohtaisen Facebook-tilin, jolla luodaan Meta-kehittäjätili (sovelluksen omistaja; voi olla oma tilisi)
-
-### 1. Vaihda Instagram-tili ammattilaistiliksi (Business)
-
-Tee tämä Instagram-sovelluksessa fcjaliskirahvit-tilillä kirjautuneena:
-
-1. Profiili → ☰ → **Asetukset ja toiminta** → **Tilin tyyppi ja työkalut** → **Vaihda ammattilaistiliin**.
-2. Valitse kategoriaksi esim. *Urheilujoukkue* (Sports Team).
-3. Valitse tilityypiksi **Yritys (Business)**. Metan dokumentaation mukaan tarinoiden julkaisu API:n kautta on varmasti tuettu yritystileillä. Creator-tilillä se ei välttämättä toimi.
-4. Facebook-sivun yhdistämisen voi ohittaa.
-
-Vaihto on ilmainen, eikä se muuta tilin julkaisuja tai seuraajia. Tilin pitää olla julkinen.
-
-### 2. Luo Meta-kehittäjätili ja sovellus
-
-1. Mene osoitteeseen <https://developers.facebook.com>, kirjaudu Facebook-tunnuksilla ja rekisteröidy kehittäjäksi (vahvistus puhelinnumerolla tai sähköpostilla).
-2. **My Apps** → **Create App**.
-   - Nimi esim. `Jaliskirahvit stories`.
-   - Käyttötapaus (use case): **Manage messaging & content on Instagram**.
-   - Business portfolio: "I don't want to connect a business portfolio yet" riittää.
-3. Sovellus jää **Development**-tilaan. Se riittää, kun julkaistaan vain tiliin, jolla on rooli sovelluksessa. App Review -tarkastusta ei tarvita.
-
-### 3. Liitä Instagram-tili ja luo token
-
-1. Avaa sovelluksen hallintapaneelissa **Instagram** → **API setup with Instagram login**.
-2. Kohdassa *Generate access tokens* valitse **Add account** ja kirjaudu fcjaliskirahvit-tunnuksilla. Hyväksy oikeudet, joihin kuuluvat `instagram_business_basic` ja `instagram_business_content_publish`.
-   - Jos sovellus pyytää lisäämään tilin testaajaksi, mene kohtaan **App roles → Roles → Instagram Testers** ja lisää `fcjaliskirahvit`. Hyväksy kutsu Instagramissa (verkossa: Asetukset → Sovellukset ja verkkosivustot → *Tester invites*) ja yritä uudelleen.
-3. Tilin viereen tulee **Generate token**. Kopioi token. Se on pitkäikäinen token, joka on voimassa 60 päivää.
-4. Tarkista token ja hae tilin ID:
-
-   ```bash
-   curl "https://graph.instagram.com/v23.0/me?fields=user_id,username&access_token=TOKEN"
-   ```
-
-   Vastauksen `user_id` on `IG_USER_ID`.
-
-### 4. Lisää tunnukset GitHubiin
-
-Mene repossa kohtaan **Settings → Secrets and variables → Actions**.
+Arvot on tallennettu kohtaan Settings → Secrets and variables → Actions:
 
 | Tyyppi | Nimi | Arvo |
 |---|---|---|
-| Secret | `IG_ACCESS_TOKEN` | token kohdasta 3 |
-| Secret | `IG_USER_ID` | `user_id` kohdasta 3 |
-| Secret | `SECRETS_PAT` | ks. alla (tokenin automaattinen uusiminen) |
-| Variable | `IG_API_HOST` | vain Facebook Login -polulla: `graph.facebook.com` (sivun token, ei vanhene) |
-| Variable | `STORY_PUBLISH` | `true`, kun haluat julkaisun päälle |
+| Secret | `IG_ACCESS_TOKEN` | Facebook-sivun token (Expires: Never) |
+| Secret | `IG_USER_ID` | Instagram-tilin ID (`instagram_business_account.id`) |
+| Variable | `IG_API_HOST` | `graph.facebook.com` |
+| Variable | `STORY_PUBLISH` | ei asetettu (= päällä), `false` laittaa julkaisun tauolle |
 
-**Tokenin uusiminen:** Instagram-token vanhenee 60 päivässä. Workflow `Instagram token refresh` uusii sen kahdesti kuukaudessa ja tallentaa uuden tokenin secretiin. Tallentamiseen tarvitaan oma GitHub-token:
+### Tokenin uusiminen
 
-1. GitHub → oma profiili → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
-2. Repository access: *Only select repositories* → `jaliskirahvit.github.io`.
-3. Permissions → Repository permissions → **Secrets: Read and write**. Muita oikeuksia ei tarvita.
-4. Aseta voimassaoloksi esim. 1 vuosi ja tallenna token secretiksi `SECRETS_PAT`.
-5. Testaa ajamalla Actions → *Instagram token refresh* → **Run workflow**.
+Sivun token ei vanhene, mutta Metan **datakäyttöoikeus päättyy noin 90 päivän välein**. Workflow *Instagram token refresh and check* testaa tokenin maanantaisin. Jos token ei toimi, ajo epäonnistuu ja GitHub lähettää siitä sähköpostin. Uusi token silloin näin:
 
-Jos `SECRETS_PAT`-tokenia ei ole, token pitää luoda käsin uudelleen kohdan 3 mukaisesti vähintään 60 päivän välein.
+1. Avaa [Graph API Explorer](https://developers.facebook.com/tools/explorer/) ja valitse joukkueen sovellus ja *User Token*. Valitse yllä luetellut oikeudet ja paina **Generate Access Token**. Valitse dialogissa FC Jaliskirahvitin sivu ja Instagram-tili.
+2. Pidennä token [Access Token Debuggerissa](https://developers.facebook.com/tools/debug/accesstoken/) (**Extend Access Token**).
+3. Hae Explorerissa pidennetyllä tokenilla `GET me/accounts` ja kopioi FC Jaliskirahvitin rivin `access_token`.
+4. Tarkista debuggerista, että tyyppi on *Page* ja *Expires* on *Never*. Päivitä token sitten secretiin `IG_ACCESS_TOKEN`.
+5. Varmista toiminta ajamalla *Instagram token refresh and check* käsin.
 
-### 5. Testaa
+> Koodi tukee myös Instagram Login -polkua (`graph.instagram.com`, 60 päivän token). Siinä muuttuja `IG_API_HOST` jätetään asettamatta, ja token uusitaan automaattisesti, jos secret `SECRETS_PAT` on asetettu. Kyseessä on fine-grained GitHub-token, jolla on oikeus *Secrets: Read and write*. Polku ei ole nyt käytössä.
 
-1. Jätä `STORY_PUBLISH` aluksi asettamatta ja katso ensimmäisen ottelun jälkeen kuva `assets/stories/<match_id>.jpg`.
-2. Kun kuva näyttää hyvältä, aseta `STORY_PUBLISH=true`. Jo renderöity tarina julkaistaan seuraavalla tunnin ajolla, jos ottelu on alle 3 päivää vanha. Julkaisun voi käynnistää heti kohdasta Actions → *Daily data update* → **Run workflow**.
+## Rajoitukset
 
-### Rajoitukset
-
-- API:lla voi julkaista vain kuvan. Tarroja, linkkejä, musiikkia tai tunnisteita ei voi lisätä.
+- Rajapinnalla voi julkaista vain kuvan. Tarroja, linkkejä, musiikkia ja kohokohtia ei voi lisätä.
 - Rajana on 50 API-julkaisua vuorokaudessa.
-- Instagram hakee kuvan julkisesta osoitteesta, joten se julkaistaan GitHub Pagesin kautta. Julkaisuvaihe odottaa enintään 10 minuuttia, että Pages on päivittynyt. Jos odotus ei riitä, julkaisua yritetään uudelleen seuraavalla ajolla.
-
----
-
-## Nykyinen käyttöönotto (Facebook Login)
-
-Sovellus on otettu käyttöön Facebook Login -polulla:
-
-- Facebook-sivu **FC Jaliskirahvit** (id 1422757317587030), johon @fcjaliskirahvit on yhdistetty
-- tokenin oikeudet `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement` ja `business_management`
-- `IG_ACCESS_TOKEN` on **sivun** token (Expires: Never), `IG_USER_ID` = 17841480485627926 ja muuttuja `IG_API_HOST` = `graph.facebook.com`
-
-Sivun token ei vanhene, mutta Metan **datakäyttöoikeus (Data Access Expires) päättyy noin 90 päivän välein**. Workflow *Instagram token refresh and check* testaa tokenin maanantaisin ja epäonnistuu, jos token ei enää toimi. GitHub lähettää epäonnistuneesta ajosta sähköpostin. Korjaa tilanne näin:
-
-1. Luo Graph API Explorerissa uusi käyttäjätoken samoilla oikeuksilla ja pidennä se (*Extend Access Token*).
-2. Hae uusi sivun token kyselyllä `GET me/accounts`.
-3. Päivitä se secretiin `IG_ACCESS_TOKEN`.
-
-## Ottelupäivän vahti ja testiajo
-
-- **Match day watch** (`story/watch.py`): GitHub ajaa tunnin välein ajastetun päivityksen vain muutaman kerran päivässä. Kun datapäivitys huomaa, että futsal-ottelu on tulossa saman päivän aikana, se käynnistää vahdin. Vahti odottaa, kunnes aloituksesta on kulunut 55 minuuttia, ja käynnistää sen jälkeen datapäivityksen 10 minuutin välein, kunnes tarina on julkaistu tai aloituksesta on kulunut 8 tuntia. Varalla vahti käynnistyy myös ajastetusti joka aamu. Käsin käynnistettyjä (`workflow_dispatch`) ajoja GitHub ei viivästytä.
-- **Story test**: Actions → *Story test* → Run workflow. Ajo renderöi jo pelatusta ottelusta tarinan oikeilla maalintekijöillä, julkaisee kuvan GitHub Pagesiin ja tarkistaa, että Instagram hyväksyy sen tarinaksi. **Mitään ei julkaista.**
+- Julkaisu odottaa GitHub Pagesin päivittymistä enintään 10 minuuttia. Jos odotus ei riitä, julkaisua yritetään uudelleen seuraavalla ajolla.
