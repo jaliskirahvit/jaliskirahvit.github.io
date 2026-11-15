@@ -260,6 +260,10 @@ def cmd_prepare(_args):
     for m in matches:
         mid = m["match_id"]
         entry = entries.get(mid, {})
+        # A rendered image that never reached the repository (failed commit) is made again
+        if entry.get("status") == "rendered" and not (ROOT / entry.get("image", "")).is_file():
+            print(f"{mid}: rendered image missing, rendering again")
+            entry["status"] = "ready"
         if entry.get("status") in ("ready", "rendered", "published", "skipped"):
             continue
         if not is_finished(m):

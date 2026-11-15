@@ -80,7 +80,7 @@ jobs:
               if: always() && steps.story.outputs.publish == 'true'
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
-                commit_message: "Instagram story published"
+                commit_message: "Instagram story state"
                 file_pattern: "assets/stories/state.json"
 
             # GitHub runs the hourly schedule only a few times a day, so on match
