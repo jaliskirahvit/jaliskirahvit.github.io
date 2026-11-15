@@ -1,4 +1,4 @@
-name: Instagram token refresh
+name: Instagram token refresh and check
 
 # Instagram long-lived tokens expire after 60 days unless refreshed.
 # Needs the secret SECRETS_PAT: a fine-grained token for this repository
@@ -6,7 +6,7 @@ name: Instagram token refresh
 
 on:
     schedule:
-        - cron: '17 3 1,15 * *'
+        - cron: '17 3 * * 1'
     workflow_dispatch:
 
 permissions:
@@ -21,10 +21,21 @@ jobs:
                 IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
                 GH_TOKEN: ${{ secrets.SECRETS_PAT }}
                 IG_API_HOST: ${{ vars.IG_API_HOST }}
+                IG_USER_ID: ${{ secrets.IG_USER_ID }}
               run: |
-                # Facebook Login Page tokens made from a long-lived user token do not expire
+                # Facebook Login Page tokens do not expire, but Meta's data access
+                # does after ~90 days without re-authorisation. Fail loudly then,
+                # so the failed run notifies before a match story is lost.
                 if [ "$IG_API_HOST" = "graph.facebook.com" ]; then
-                  echo "Facebook Login token, no refresh needed"
+                  response=$(curl -sS -G "https://graph.facebook.com/v23.0/$IG_USER_ID" \
+                    --data-urlencode "fields=username" \
+                    --data-urlencode "access_token=$IG_ACCESS_TOKEN")
+                  if [ "$(echo "$response" | jq -r '.username // empty')" = "" ]; then
+                    echo "Token check failed: $response"
+                    echo "Re-authorise the app in Graph API Explorer and update IG_ACCESS_TOKEN (story/README.md)"
+                    exit 1
+                  fi
+                  echo "Facebook Login token works for @$(echo "$response" | jq -r .username)"
                   exit 0
                 fi
                 if [ -z "$IG_ACCESS_TOKEN" ] || [ -z "$GH_TOKEN" ]; then

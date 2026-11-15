@@ -124,3 +124,19 @@ Jos `SECRETS_PAT`-tokenia ei ole, token pitää luoda käsin uudelleen kohdan 3 
 - API:lla voi julkaista vain kuvan. Tarroja, linkkejä, musiikkia tai tunnisteita ei voi lisätä.
 - Rajana on 50 API-julkaisua vuorokaudessa.
 - Instagram hakee kuvan julkisesta osoitteesta, joten se julkaistaan GitHub Pagesin kautta. Julkaisuvaihe odottaa enintään 10 minuuttia, että Pages on päivittynyt. Jos odotus ei riitä, julkaisua yritetään uudelleen seuraavalla ajolla.
+
+---
+
+## Nykyinen käyttöönotto (Facebook Login)
+
+Sovellus on otettu käyttöön Facebook Login -polulla:
+
+- Facebook-sivu **FC Jaliskirahvit** (id 1422757317587030), johon @fcjaliskirahvit on yhdistetty
+- tokenin oikeudet `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement` ja `business_management`
+- `IG_ACCESS_TOKEN` on **sivun** token (Expires: Never), `IG_USER_ID` = 17841480485627926 ja muuttuja `IG_API_HOST` = `graph.facebook.com`
+
+Sivun token ei vanhene, mutta Metan **datakäyttöoikeus (Data Access Expires) päättyy noin 90 päivän välein**. Workflow *Instagram token refresh and check* testaa tokenin maanantaisin ja epäonnistuu, jos token ei enää toimi. GitHub lähettää epäonnistuneesta ajosta sähköpostin. Korjaa tilanne näin:
+
+1. Luo Graph API Explorerissa uusi käyttäjätoken samoilla oikeuksilla ja pidennä se (*Extend Access Token*).
+2. Hae uusi sivun token kyselyllä `GET me/accounts`.
+3. Päivitä se secretiin `IG_ACCESS_TOKEN`.
