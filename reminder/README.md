@@ -9,8 +9,7 @@ Ryhmään ei lähetetä mitään automaattisesti. WhatsAppin virallinen rajapint
 ```
 FC Jaliskirahvit - Kasiysi/3
 
-Sijainti: Otahalli B,
-Otaranta 6, 02150 Espoo
+Sijainti: Otahalli B
 
 Päivämäärä: Huomenna lauantaina
 Paikalla 15:15
@@ -25,7 +24,6 @@ Ilmoittautuminen: https://fcjaliskirahvit.nimenhuuto.com/events/20565079
 - **Paikalla** on aina 45 minuuttia ennen aloitusta.
 - **Peliasu** on aina *Ottakaa molemmat*. Sen voi muuttaa WhatsAppissa ennen lähettämistä.
 - **Ilmoittautuminen** on linkki ottelun Nimenhuuto-tapahtumaan. Linkki löytyy automaattisesti: Nimenhuudon julkisessa tapahtumalistassa jokaisen ottelun lisätiedoissa on linkki tulospalveluun (`tulospalvelu.palloliitto.fi/match/<match_id>`). Jos tapahtumaa ei löydy, viestissä on linkki tapahtumalistaan. Yksittäisen ottelun voi asettaa käsin tiedostossa `reminder/nimenhuuto.json`, esimerkiksi `{"4363833": "20565079"}`. Ilmoittautuneiden määrä ei näy ilman kirjautumista, joten sitä ei ole viestissä.
-- **Osoite** tulee taulukosta `VENUE_ADDRESSES` tiedostossa `reminder/reminder.py`, koska rajapinta antaa vain hallin nimen. Jos hallia ei ole taulukossa, viestissä on pelkkä nimi. Lisää uudet hallit taulukkoon.
 
 ## Näin se toimii
 

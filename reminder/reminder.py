@@ -40,16 +40,6 @@ NIMENHUUTO = "https://fcjaliskirahvit.nimenhuuto.com"
 NIMENHUUTO_OVERRIDES = ROOT / "reminder" / "nimenhuuto.json"
 _events_cache = None
 
-# Street addresses by venue_name. The API only gives the hall name and
-# coordinates, so add new venues here. Unknown venues get only the name.
-VENUE_ADDRESSES = {
-    "Otahalli B": "Otaranta 6, 02150 Espoo",
-    "Latokartano LH 1": "Agronominkatu 26, 00790 Helsinki",
-    "Opinmäen liikuntahalli": "Lillhemtintie 1, 02250 Espoo",
-    "Kaarela AC 1": "Kaarelankuja 2 A, 00430 Helsinki",
-    "Tali halli TN": "Purotie 8, 00380 Helsinki",
-}
-
 WEEKDAYS = ["maanantaina", "tiistaina", "keskiviikkona", "torstaina",
             "perjantaina", "lauantaina", "sunnuntaina"]
 
@@ -106,12 +96,6 @@ def day_word(k, today):
     return f"{weekday.capitalize()} {k.day}.{k.month}."
 
 
-def location_lines(m):
-    name = m.get("venue_name") or m.get("venue_location_name") or "?"
-    address = VENUE_ADDRESSES.get(name)
-    return [f"Sijainti: {name},", address] if address else [f"Sijainti: {name}"]
-
-
 def nimenhuuto_events():
     """{match_id: event_id} from the public list of upcoming events."""
     global _events_cache
@@ -143,7 +127,7 @@ def build_message(m, today=None):
     lines = [
         f"{OWN_NAME} - {opponent(m)}",
         "",
-        *location_lines(m),
+        f"Sijainti: {m.get('venue_name') or m.get('venue_location_name') or '?'}",
         "",
         f"Päivämäärä: {day_word(k, today)}",
         f"Paikalla {(k - ARRIVE_BEFORE):%H:%M}",
