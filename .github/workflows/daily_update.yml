@@ -62,7 +62,8 @@ jobs:
               env:
                 IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
                 IG_USER_ID: ${{ secrets.IG_USER_ID }}
-                STORY_PUBLISH: ${{ vars.STORY_PUBLISH }}
+                # On by default; set the repository variable STORY_PUBLISH=false to pause
+                STORY_PUBLISH: ${{ vars.STORY_PUBLISH || 'true' }}
                 IG_API_HOST: ${{ vars.IG_API_HOST }}
               run: |
                 pip install requests

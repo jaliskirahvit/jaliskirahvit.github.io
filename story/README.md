@@ -9,7 +9,7 @@ Tunnin välein ajettava `Daily data update` -workflow tekee tarinan automaattise
 
 Tila tallennetaan tiedostoon `assets/stories/state.json`. Siinä on jokaisen ottelun tila: `waiting` (odottaa), `ready` (valmis renderöitäväksi), `rendered` (renderöity), `published` (julkaistu) tai `skipped` (ohitettu). Ottelua ei julkaista kahdesti. Jos tarina pitää julkaista uudelleen, poista ottelun rivi tiedostosta.
 
-**Julkaisu on pois päältä**, kunnes repolle on asetettu muuttuja `STORY_PUBLISH=true`. Siihen asti kuvat renderöidään ja commitoidaan, mutta niitä ei julkaista. Näin voit tarkistaa ulkoasun ensimmäisistä otteluista ennen julkaisun käyttöönottoa.
+**Julkaisu on päällä.** Sen saa tauolle asettamalla repolle muuttujan `STORY_PUBLISH=false`. Silloin kuvat vain renderöidään ja commitoidaan.
 
 ---
 
