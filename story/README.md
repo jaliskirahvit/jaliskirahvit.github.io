@@ -140,3 +140,8 @@ Sivun token ei vanhene, mutta Metan **datakäyttöoikeus (Data Access Expires) p
 1. Luo Graph API Explorerissa uusi käyttäjätoken samoilla oikeuksilla ja pidennä se (*Extend Access Token*).
 2. Hae uusi sivun token kyselyllä `GET me/accounts`.
 3. Päivitä se secretiin `IG_ACCESS_TOKEN`.
+
+## Ottelupäivän vahti ja testiajo
+
+- **Match day watch** (`story/watch.py`): GitHub ajaa tunnin välein ajastetun päivityksen vain muutaman kerran päivässä. Kun datapäivitys huomaa, että futsal-ottelu on tulossa saman päivän aikana, se käynnistää vahdin. Vahti odottaa, kunnes aloituksesta on kulunut 55 minuuttia, ja käynnistää sen jälkeen datapäivityksen 10 minuutin välein, kunnes tarina on julkaistu tai aloituksesta on kulunut 8 tuntia. Varalla vahti käynnistyy myös ajastetusti joka aamu. Käsin käynnistettyjä (`workflow_dispatch`) ajoja GitHub ei viivästytä.
+- **Story test**: Actions → *Story test* → Run workflow. Ajo renderöi jo pelatusta ottelusta tarinan oikeilla maalintekijöillä, julkaisee kuvan GitHub Pagesiin ja tarkistaa, että Instagram hyväksyy sen tarinaksi. **Mitään ei julkaista.**

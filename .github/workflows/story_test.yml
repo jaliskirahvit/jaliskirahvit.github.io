@@ -1,0 +1,57 @@
+name: Story test
+
+# End-to-end test without publishing: renders a story for an already played
+# match with real goal scorers from getMatch, serves it from GitHub Pages and
+# has Instagram accept it as a story container. Nothing is posted.
+
+on:
+    workflow_dispatch:
+        inputs:
+            match_id:
+                description: Played match to render
+                default: '4157579'
+            matches_file:
+                description: Data file containing the match
+                default: assets/matches.json
+
+permissions:
+    contents: write
+
+concurrency:
+    group: data-update
+    cancel-in-progress: false
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+
+            - name: Set up Python
+              uses: actions/setup-python@v6
+              with:
+                python-version: '3.12'
+
+            - name: Install dependencies
+              run: |
+                pip install requests playwright
+                python -m playwright install --with-deps chromium
+
+            - name: Render story with real scorers
+              env:
+                API_KEY_SECRET: ${{ secrets.TASO_API_KEY }}
+              run: python story/story.py preview "${{ inputs.match_id }}" --matches "${{ inputs.matches_file }}" --out assets/stories/test.jpg
+
+            - name: Commit test image
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                commit_message: "Story test image"
+                file_pattern: "assets/stories/test.jpg"
+
+            - name: Instagram accepts the image (not published)
+              env:
+                IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+                IG_USER_ID: ${{ secrets.IG_USER_ID }}
+                IG_API_HOST: ${{ vars.IG_API_HOST }}
+              run: python story/story.py check "https://www.jaliskirahvit.fi/assets/stories/test.jpg"
