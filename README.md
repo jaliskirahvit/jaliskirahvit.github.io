@@ -37,6 +37,8 @@ Joukkueiden, sarjojen ja lohkojen tunnisteet ovat skriptin alussa. API-avain on 
 
 Instagram-tarinoiden toiminta, kuvat ja tunnukset on kuvattu tiedostossa [`story/README.md`](story/README.md).
 
+Pelimuistutus WhatsApp-ryhmään on kuvattu tiedostossa [`reminder/README.md`](reminder/README.md).
+
 ## Kehitys
 
 Botti commitoi `main`-haaraan datapäivityksiä jatkuvasti, joten hae muutokset ennen omaa pushia:
