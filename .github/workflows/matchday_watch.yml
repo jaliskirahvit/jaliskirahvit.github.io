@@ -1,0 +1,32 @@
+name: Match day watch
+
+# Polls for the result of today's futsal match, see story/watch.py.
+# Started by the data update when a match is due, by this schedule as a
+# backup, or by itself when one run is about to hit the 6 h job limit.
+
+on:
+    schedule:
+        - cron: '23 5 * * *'
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    actions: write
+
+concurrency:
+    group: matchday-watch
+    cancel-in-progress: false
+
+jobs:
+    watch:
+        runs-on: ubuntu-latest
+        timeout-minutes: 355
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v5
+
+            - name: Watch
+              env:
+                GH_TOKEN: ${{ github.token }}
+                STORY_PUBLISH: ${{ vars.STORY_PUBLISH || 'true' }}
+              run: python3 story/watch.py

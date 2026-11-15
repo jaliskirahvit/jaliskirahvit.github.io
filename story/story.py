@@ -361,17 +361,32 @@ def wait_for_url(url, timeout=600):
     return False
 
 
-def publish_story(image_url):
+def create_container(image_url):
+    """Upload the image to Instagram as an unpublished story container."""
     user = os.environ["IG_USER_ID"]
     container = _ig("POST", f"{user}/media", image_url=image_url, media_type="STORIES")["id"]
     for _ in range(30):
         status = _ig("GET", container, fields="status_code").get("status_code")
         if status == "FINISHED":
-            break
+            return container
         if status in ("ERROR", "EXPIRED"):
             raise RuntimeError(f"Container {container} {status}")
         time.sleep(5)
-    return _ig("POST", f"{user}/media_publish", creation_id=container)["id"]
+    raise RuntimeError(f"Container {container} not ready in time")
+
+
+def publish_story(image_url):
+    container = create_container(image_url)
+    return _ig("POST", f"{os.environ['IG_USER_ID']}/media_publish", creation_id=container)["id"]
+
+
+def cmd_check(args):
+    """Everything up to publishing: Instagram fetches and accepts the image,
+    but the container is never published (it expires on its own in 24 h)."""
+    if not wait_for_url(args.image_url):
+        sys.exit(f"{args.image_url} is not served")
+    container = create_container(args.image_url)
+    print(f"OK: Instagram accepted {args.image_url} as story container {container} (not published)")
 
 
 def cmd_publish(_args):
@@ -414,6 +429,12 @@ def cmd_preview(args):
     if m is None or not is_finished(m):
         sys.exit(f"{args.match_id}: not a played match in {args.matches}")
     details = None if args.offline else fetch_match_details(args.match_id)
+    if details is not None:
+        events = [e for e in details.get("events") or [] if isinstance(e, dict)]
+        print(f"getMatch keys: {sorted(details.keys())}")
+        print(f"event codes: {sorted({_event_code(e) for e in events})}")
+        if events:
+            print(f"event fields: {sorted(events[0].keys())}")
     story = build_story(m, matches, details)
     if args.scorers:
         story["scorers"] = group_scorers([s.strip() for s in args.scorers.split(",")])
@@ -440,6 +461,9 @@ def main():
     p.add_argument("--offline", action="store_true", help="skip getMatch")
     p.add_argument("--scorers", help="comma separated names, for layout tests")
     p.set_defaults(fn=cmd_preview)
+    c = sub.add_parser("check")
+    c.add_argument("image_url")
+    c.set_defaults(fn=cmd_check)
     d = sub.add_parser("dump")
     d.add_argument("match_id")
     d.set_defaults(fn=cmd_dump)

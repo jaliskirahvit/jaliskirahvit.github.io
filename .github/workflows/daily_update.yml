@@ -7,6 +7,7 @@ on:
 
 permissions:
     contents: write
+    actions: write
 
 concurrency:
     group: data-update
@@ -73,3 +74,20 @@ jobs:
               with:
                 commit_message: "Instagram story published"
                 file_pattern: "assets/stories/state.json"
+
+            # GitHub runs the hourly schedule only a few times a day, so on match
+            # days a watcher polls for the result every 10 minutes
+            - name: Start match day watch
+              if: always()
+              env:
+                GH_TOKEN: ${{ github.token }}
+                STORY_PUBLISH: ${{ vars.STORY_PUBLISH || 'true' }}
+              run: |
+                if python3 story/watch.py --check; then
+                  running=$(gh run list --workflow matchday_watch.yml --json status --jq '[.[] | select(.status == "in_progress" or .status == "queued" or .status == "waiting")] | length')
+                  if [ "$running" = "0" ]; then
+                    gh workflow run matchday_watch.yml --ref main
+                  else
+                    echo "Match day watch already running"
+                  fi
+                fi
