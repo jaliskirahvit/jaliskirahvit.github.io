@@ -56,7 +56,3 @@ git branch -d branch-name
 ```
 
 Sivut voi esikatsella paikallisesti esim. komennolla `python -m http.server`.
-
-## TODO
-
-- kirahvit lihavoituna edellisten ottelujen listassa
