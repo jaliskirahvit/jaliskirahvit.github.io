@@ -20,7 +20,13 @@ jobs:
               env:
                 IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
                 GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+                IG_API_HOST: ${{ vars.IG_API_HOST }}
               run: |
+                # Facebook Login Page tokens made from a long-lived user token do not expire
+                if [ "$IG_API_HOST" = "graph.facebook.com" ]; then
+                  echo "Facebook Login token, no refresh needed"
+                  exit 0
+                fi
                 if [ -z "$IG_ACCESS_TOKEN" ] || [ -z "$GH_TOKEN" ]; then
                   echo "IG_ACCESS_TOKEN or SECRETS_PAT missing, nothing to do"
                   exit 0

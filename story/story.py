@@ -38,7 +38,10 @@ TEMPLATE = ROOT / "story" / "template.html"
 
 KIRAHVIT_CLUB_ID = "6950"
 SITE_URL = os.getenv("STORY_SITE_URL", "https://www.jaliskirahvit.fi")
-IG_API = f"https://graph.instagram.com/{os.getenv('IG_API_VERSION', 'v23.0')}"
+# graph.instagram.com for "Instagram API with Instagram Login",
+# graph.facebook.com when the app uses Facebook Login and a Page token
+IG_API_HOST = os.getenv("IG_API_HOST") or "graph.instagram.com"
+IG_API = f"https://{IG_API_HOST}/{os.getenv('IG_API_VERSION') or 'v23.0'}"
 
 # Results older than this are never posted (no backfill of a whole season)
 MAX_MATCH_AGE = timedelta(days=3)
