@@ -1,3 +1,74 @@
 {
-    "matches": {}
+    "matches": {
+        "4363827": {
+            "first_seen": "2026-11-15T19:22:54+00:00",
+            "status": "rendered",
+            "story": {
+                "match_id": "4363827",
+                "result": "win",
+                "headline": "VOITTO",
+                "category": "Miesten Futsal-Vitonen",
+                "date": "su 15.11.",
+                "venue": "Otahalli B",
+                "home": {
+                    "name": "FC Jaliskirahvit",
+                    "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                    "score": 9,
+                    "own": true
+                },
+                "away": {
+                    "name": "F.C. Heimo",
+                    "crest": "https://cdn.torneopal.net/logo/palloliitto/4168x.png",
+                    "score": 3,
+                    "own": false
+                },
+                "scorers": [
+                    {
+                        "name": "Olli Lukkarinen",
+                        "goals": 3
+                    },
+                    {
+                        "name": "Leevi Tiihonen",
+                        "goals": 2
+                    },
+                    {
+                        "name": "Niilo Kurki-Suonio",
+                        "goals": 2
+                    },
+                    {
+                        "name": "Patrik Haverinen",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Teemu Elo",
+                        "goals": 1
+                    }
+                ],
+                "scorers_complete": true,
+                "opponent_scorers": [
+                    {
+                        "name": "Baw Sar Moo K '",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Joonas Winogradow",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Roope Saarikivi",
+                        "goals": 1
+                    }
+                ],
+                "next": {
+                    "date": "la 28.11.",
+                    "time": "16:00",
+                    "opponent": "Kasiysi/3",
+                    "home": false
+                },
+                "site": "jaliskirahvit.fi"
+            },
+            "image": "assets/stories/4363827.jpg",
+            "photo": "assets/story-photos/voitto/dsf9906.jpg"
+        }
+    }
 }
