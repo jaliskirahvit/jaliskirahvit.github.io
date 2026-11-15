@@ -26,6 +26,7 @@ Lisää kuvia kansioihin:
 
 Jos kaikki kansiot ovat tyhjiä, käytetään sivuston kuvia kansiosta `assets/photos/`.
 
+- Nykyiset kuvat on valittu Drive-kansiosta *Jaliskirahvit / Edited* ja rajattu valmiiksi kokoon 1080×1920 (pystyrajaus, JPEG ~450 kt). Uudet kuvat kannattaa rajata samoin.
 - Pystykuvat toimivat parhaiten. Kuva rajataan täyttämään 1080×1920 ja kohdistetaan hieman yläosaan.
 - Muodot: JPG, PNG tai WEBP. Pidä kuvat alle noin 1 MB:n kokoisina (pitkä sivu noin 2000 px riittää), koska repo on julkinen ja jokainen kuva jää historiaan.
 - **Repo on julkinen**, joten myös kuvat ovat julkisia. Käytä vain kuvia, joiden julkaisuun kuvissa näkyvät pelaajat ovat suostuneet.
