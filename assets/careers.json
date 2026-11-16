@@ -1,7 +1,21 @@
 {
-    "updated": "2026-11-15",
+    "updated": "2026-11-16",
     "players": {
         "56947": [
+            {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 1,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
             {
                 "season": "2026",
                 "sport": "football",
@@ -370,6 +384,20 @@
             }
         ],
         "60628": [
+            {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 1,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
             {
                 "season": "2026",
                 "sport": "football",
@@ -1053,6 +1081,20 @@
         ],
         "73215": [
             {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 2,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
+            {
                 "season": "2026",
                 "sport": "football",
                 "competition_name": "Etel\u00e4 Jalkapallo 2026",
@@ -1251,6 +1293,20 @@
         ],
         "75126": [
             {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 0,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
+            {
                 "season": "2026",
                 "sport": "football",
                 "competition_name": "Etel\u00e4 Jalkapallo 2026",
@@ -1407,6 +1463,20 @@
         ],
         "78287": [
             {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 3,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
+            {
                 "season": "2026",
                 "sport": "football",
                 "competition_name": "Etel\u00e4 Jalkapallo 2026",
@@ -1536,6 +1606,20 @@
             }
         ],
         "82218": [
+            {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 0,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
             {
                 "season": "2026",
                 "sport": "football",
@@ -2089,6 +2173,20 @@
         ],
         "99042": [
             {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 2,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
+            {
                 "season": "2026",
                 "sport": "football",
                 "competition_name": "Etel\u00e4 Jalkapallo 2026",
@@ -2610,6 +2708,20 @@
             }
         ],
         "99795": [
+            {
+                "season": "2026-27",
+                "sport": "futsal",
+                "competition_name": "Etel\u00e4 Futsal 2026-2027",
+                "category_name": "Miesten Futsal-Vitonen",
+                "team_name": "FC Jaliskirahvit",
+                "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                "last_date": "2026-11-15",
+                "matches": 1,
+                "goals": 0,
+                "assists": 0,
+                "warnings": 0,
+                "suspensions": 0
+            },
             {
                 "season": "2026",
                 "sport": "football",
