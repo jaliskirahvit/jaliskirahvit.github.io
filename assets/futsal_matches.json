@@ -10,9 +10,9 @@
         "page": 1,
         "total_result_count": 10,
         "result_count": 10,
-        "result_time": 0.121,
+        "result_time": 0.205,
         "apilevel": 1,
-        "time_stamp": 1795863456
+        "time_stamp": 1795877719
     },
     "matches": [
         {
@@ -328,11 +328,11 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "da75f778ea2ec57ef910b17b4499a60a",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363833",
-            "last_modified": "2026-10-23 15:12:05",
+            "last_modified": "2026-11-28 16:55:17",
             "match_number": "569",
             "match_report": "",
             "match_external_id": "569",
@@ -432,7 +432,7 @@
             "statistics_level": "",
             "events_display": "",
             "shotmap": "",
-            "status": "Fixture",
+            "status": "Live",
             "matchcard_status": "",
             "forfeit_A": "",
             "forfeit_B": "",
@@ -445,10 +445,10 @@
             "final_position_win": "",
             "final_position_lost": "",
             "walkover": 0,
-            "fs_A": "",
-            "fs_B": "",
-            "hts_A": "",
-            "hts_B": "",
+            "fs_A": "4",
+            "fs_B": "4",
+            "hts_A": "1",
+            "hts_B": "3",
             "ns_A": "",
             "ns_B": "",
             "es_A": "",
@@ -478,15 +478,15 @@
             "p1_start_time": "",
             "p1_end_time": "",
             "p1_duration": "",
-            "p1s_A": "",
-            "p1s_B": "",
+            "p1s_A": "1",
+            "p1s_B": "3",
             "p1_winner": "",
             "p2_start_team": "",
             "p2_start_time": "",
             "p2_end_time": "",
             "p2_duration": "",
-            "p2s_A": "",
-            "p2s_B": "",
+            "p2s_A": "3",
+            "p2s_B": "1",
             "p2_winner": "",
             "p3_start_team": "",
             "p3_start_time": "",
@@ -526,8 +526,8 @@
             "secretary_name": "",
             "timer_id": "0",
             "timer_name": "",
-            "referee_1_id": "",
-            "referee_1_name": "",
+            "referee_1_id": "211",
+            "referee_1_name": "Ville Rusama",
             "referee_1_player_id": "",
             "referee_2_id": "",
             "referee_2_name": "",
@@ -586,14 +586,14 @@
             "extra_period_count": "",
             "extra_period_min": "",
             "ps_count": "",
-            "live_period": "-1",
-            "live_time": "00:00",
+            "live_period": "2",
+            "live_time": "14:45",
             "live_time_mmss": "",
-            "live_minutes": "",
+            "live_minutes": 30,
             "live_A": "",
             "live_B": "",
-            "live_ps_A": "",
-            "live_ps_B": "",
+            "live_ps_A": "3",
+            "live_ps_B": "1",
             "live_timeouts_A": "",
             "live_timeouts_B": "",
             "live_timeout_skip_A": "",
@@ -604,8 +604,8 @@
             "live_serve_team": "",
             "live_fouls_A": 0,
             "live_fouls_B": 0,
-            "live_timer_start": "0000-00-00 00:00:00",
-            "live_timer_start_time": "00:00:00",
+            "live_timer_start": "2026-11-28 16:55:17",
+            "live_timer_start_time": "00:14:45",
             "live_timer_on": "0",
             "temperature": "",
             "weather": "",
@@ -642,8 +642,8 @@
             "avar_id": "",
             "avar_name": "",
             "assign_avar": "",
-            "version_hash": "74b6c3321a29eff333a2bb7d220ac519",
-            "timestamp": "1795863456"
+            "version_hash": "4b0c2cb551d89a492cea4db68bf5bb2b",
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363838",
@@ -958,7 +958,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "ba97b54004a4ce3a9b4aeaf870c0a040",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363847",
@@ -1273,7 +1273,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "888086c426f62cdbc3a2c175765ccaec",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363851",
@@ -1588,7 +1588,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "9c1a99354dd9c76beb334fb7fd57824e",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363855",
@@ -1903,7 +1903,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "54243dd3aec8cfde1a233338aae51156",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363859",
@@ -2218,7 +2218,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "190b9eeb5eefc33cc32238b384974e32",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363866",
@@ -2533,7 +2533,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "fac7a160a592d92ed53df0695f72149d",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363871",
@@ -2848,7 +2848,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "c88282ab5c9918c53b617bbbc23f7ede",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         },
         {
             "match_id": "4363877",
@@ -3163,7 +3163,7 @@
             "avar_name": "",
             "assign_avar": "",
             "version_hash": "d4050667fb489e82e48afd8cf10b3374",
-            "timestamp": "1795863456"
+            "timestamp": "1795877719"
         }
     ]
 }
