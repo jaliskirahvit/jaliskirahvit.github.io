@@ -74,7 +74,7 @@
         },
         "4363833": {
             "first_seen": "2026-11-28T15:05:15+00:00",
-            "status": "rendered",
+            "status": "published",
             "story": {
                 "match_id": "4363833",
                 "result": "win",
@@ -140,7 +140,9 @@
                 "site": "jaliskirahvit.fi"
             },
             "image": "assets/stories/4363833.jpg",
-            "photo": "assets/story-photos/voitto/dsf9905.jpg"
+            "photo": "assets/story-photos/voitto/dsf9905.jpg",
+            "media_id": "18139079974709268",
+            "published_at": "2026-11-28T15:06:41+00:00"
         }
     }
 }
