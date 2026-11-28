@@ -71,6 +71,76 @@
             "photo": "assets/story-photos/voitto/dsf9906.jpg",
             "media_id": "17949393510354077",
             "published_at": "2026-11-15T20:08:15+00:00"
+        },
+        "4363833": {
+            "first_seen": "2026-11-28T15:05:15+00:00",
+            "status": "rendered",
+            "story": {
+                "match_id": "4363833",
+                "result": "win",
+                "headline": "VOITTO",
+                "category": "Miesten Futsal-Vitonen",
+                "date": "la 28.11.",
+                "venue": "Otahalli B",
+                "home": {
+                    "name": "Kasiysi/3",
+                    "crest": "https://cdn.torneopal.net/logo/palloliitto/41x.png",
+                    "score": 5,
+                    "own": false
+                },
+                "away": {
+                    "name": "FC Jaliskirahvit",
+                    "crest": "https://cdn.torneopal.net/logo/palloliitto/6950x.png",
+                    "score": 6,
+                    "own": true
+                },
+                "scorers": [
+                    {
+                        "name": "Niilo Kurki-Suonio",
+                        "goals": 3
+                    },
+                    {
+                        "name": "Leevi Tiihonen",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Matias Myllymäki",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Patrik Haverinen",
+                        "goals": 1
+                    }
+                ],
+                "scorers_complete": true,
+                "opponent_scorers": [
+                    {
+                        "name": "Verneri Kononen",
+                        "goals": 2
+                    },
+                    {
+                        "name": "Moritz Bergström",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Oliver Finni",
+                        "goals": 1
+                    },
+                    {
+                        "name": "Pessi Janatuinen",
+                        "goals": 1
+                    }
+                ],
+                "next": {
+                    "date": "su 6.12.",
+                    "time": "16:30",
+                    "opponent": "Kilo IF/3",
+                    "home": true
+                },
+                "site": "jaliskirahvit.fi"
+            },
+            "image": "assets/stories/4363833.jpg",
+            "photo": "assets/story-photos/voitto/dsf9905.jpg"
         }
     }
 }
